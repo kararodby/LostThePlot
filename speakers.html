@@ -75,15 +75,6 @@
       line-height: 1;
     }
 
-    .page-title p {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #666;
-      margin-top: 10px;
-    }
-
     /* ── UPCOMING BANNER ── */
     .upcoming {
       background: var(--gray);
@@ -131,8 +122,6 @@
       padding: 8px;
     }
 
-    .upcoming-details {}
-
     .upcoming-number {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 10px;
@@ -151,9 +140,7 @@
       margin-bottom: 4px;
     }
 
-    .upcoming-name.placeholder {
-      color: #444;
-    }
+    .upcoming-name.placeholder { color: #444; }
 
     .upcoming-title {
       font-family: 'IBM Plex Serif', Georgia, serif;
@@ -163,9 +150,7 @@
       margin-bottom: 12px;
     }
 
-    .upcoming-title.placeholder {
-      color: #333;
-    }
+    .upcoming-title.placeholder { color: #333; }
 
     .upcoming-desc {
       font-family: 'IBM Plex Serif', Georgia, serif;
@@ -187,9 +172,7 @@
       text-decoration: none;
     }
 
-    .upcoming-meta a:hover {
-      text-decoration: underline;
-    }
+    .upcoming-meta a:hover { text-decoration: underline; }
 
     /* ── PAST SPEAKERS ── */
     .section-label {
@@ -203,7 +186,7 @@
 
     .speaker-entry {
       display: grid;
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: 80px 80px 1fr;
       gap: 28px;
       padding: 28px 0;
       border-bottom: 1px solid var(--mid);
@@ -221,6 +204,34 @@
       color: var(--red);
       line-height: 1;
       padding-top: 4px;
+    }
+
+    .speaker-photo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 1px solid #444;
+      filter: grayscale(100%);
+    }
+
+    .speaker-photo-placeholder {
+      width: 80px;
+      height: 80px;
+      background: var(--mid);
+      border: 1px solid #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .speaker-photo-placeholder span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      text-align: center;
+      line-height: 1.5;
     }
 
     .speaker-info {}
@@ -268,15 +279,13 @@
       text-decoration: none;
     }
 
-    .speaker-link:hover {
-      text-decoration: underline;
-    }
+    .speaker-link:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
     footer {
       margin-top: 56px;
       padding-top: 24px;
-      border-top: 2px solid var(--red);
+      border-top: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -304,7 +313,7 @@
       body { padding: 40px 24px 60px; }
       .upcoming-inner { grid-template-columns: 1fr; }
       .upcoming-headshot { width: 80px; height: 80px; }
-      .speaker-entry { grid-template-columns: 56px 1fr; gap: 16px; }
+      .speaker-entry { grid-template-columns: 56px 56px 1fr; gap: 12px; }
       footer { flex-direction: column; align-items: flex-start; }
       footer .footer-meta { text-align: left; }
     }
@@ -349,6 +358,7 @@
 
     <div class="speaker-entry">
       <div class="speaker-num">2026.0</div>
+      <img class="speaker-photo" src="Kara_R_0036_Full.jpg" alt="Kara Rodby" />
       <div class="speaker-info">
         <div class="speaker-name">Kara Rodby</div>
         <div class="speaker-talk">"Revisiting the Plot in Clean Energy Tech"</div>
