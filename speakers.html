@@ -186,7 +186,7 @@
 
     .speaker-entry {
       display: grid;
-      grid-template-columns: 80px 80px 1fr;
+      grid-template-columns: 120px 1fr;
       gap: 28px;
       padding: 28px 0;
       border-bottom: 1px solid var(--mid);
@@ -197,26 +197,31 @@
       border-top: 1px solid var(--mid);
     }
 
+    .speaker-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     .speaker-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 32px;
       letter-spacing: 0.06em;
       color: var(--red);
       line-height: 1;
-      padding-top: 4px;
     }
 
     .speaker-photo {
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
       border: 1px solid #444;
       filter: grayscale(100%);
     }
 
     .speaker-photo-placeholder {
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       background: var(--mid);
       border: 1px solid #444;
       display: flex;
@@ -313,7 +318,7 @@
       body { padding: 40px 24px 60px; }
       .upcoming-inner { grid-template-columns: 1fr; }
       .upcoming-headshot { width: 80px; height: 80px; }
-      .speaker-entry { grid-template-columns: 56px 56px 1fr; gap: 12px; }
+      .speaker-entry { grid-template-columns: 80px 1fr; gap: 16px; }
       footer { flex-direction: column; align-items: flex-start; }
       footer .footer-meta { text-align: left; }
     }
@@ -357,8 +362,10 @@
     <div class="section-label">Past Seminars</div>
 
     <div class="speaker-entry">
-      <div class="speaker-num">2026.0</div>
-      <img class="speaker-photo" src="Kara_R_0036_Full.jpg" alt="Kara Rodby" />
+      <div class="speaker-left">
+        <div class="speaker-num">2026.0</div>
+        <img class="speaker-photo" src="Kara_R_0036_Full.jpg" alt="Kara Rodby" />
+      </div>
       <div class="speaker-info">
         <div class="speaker-name">Kara Rodby</div>
         <div class="speaker-talk">"Revisiting the Plot in Clean Energy Tech"</div>
