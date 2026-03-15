@@ -1,1 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speakers — Lost the Plot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --black: #0d0d0d;
+      --white: #f2f0eb;
+      --red: #d42b2b;
+      --gray: #1a1a1a;
+      --mid: #2e2e2e;
+    }
+
+    html { background: var(--black); color: var(--white); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--black);
+      border-bottom: 1px solid var(--mid);
+      padding: 0 40px;
+    }
+
+    nav ul {
+      max-width: 780px;
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      height: 48px;
+    }
+
+    nav a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    nav a:hover { color: var(--white); }
+    nav a.active { color: var(--red); }
+
+    body {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      background: var(--black);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    /* ── PAGE TITLE ── */
+    .page-title {
+      margin-bottom: 52px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid var(--red);
+    }
+
+    .page-title h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 8vw, 72px);
+      letter-spacing: 0.04em;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .page-title p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #666;
+      margin-top: 10px;
+    }
+
+    /* ── UPCOMING BANNER ── */
+    .upcoming {
+      background: var(--gray);
+      border: 1px solid var(--mid);
+      border-left: 4px solid var(--red);
+      padding: 36px 40px;
+      margin-bottom: 64px;
+    }
+
+    .upcoming-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 24px;
+    }
+
+    .upcoming-inner {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .upcoming-headshot {
+      width: 120px;
+      height: 120px;
+      background: var(--mid);
+      border: 1px solid #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .upcoming-headshot span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      text-align: center;
+      line-height: 1.5;
+      padding: 8px;
+    }
+
+    .upcoming-details {}
+
+    .upcoming-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .upcoming-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .upcoming-name.placeholder {
+      color: #444;
+    }
+
+    .upcoming-title {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .upcoming-title.placeholder {
+      color: #333;
+    }
+
+    .upcoming-desc {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .upcoming-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #666;
+    }
+
+    .upcoming-meta a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .upcoming-meta a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── PAST SPEAKERS ── */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .speaker-entry {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--mid);
+      align-items: start;
+    }
+
+    .speaker-entry:first-of-type {
+      border-top: 1px solid var(--mid);
+    }
+
+    .speaker-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.06em;
+      color: var(--red);
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .speaker-info {}
+
+    .speaker-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .speaker-talk {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      font-style: italic;
+      font-size: 15px;
+      color: #aaa;
+      margin-bottom: 8px;
+    }
+
+    .speaker-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .speaker-desc {
+      font-family: 'IBM Plex Serif', Georgia, serif;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .speaker-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .speaker-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 2px solid var(--red);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+      color: var(--red);
+    }
+
+    footer .footer-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      text-align: right;
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 40px 24px 60px; }
+      .upcoming-inner { grid-template-columns: 1fr; }
+      .upcoming-headshot { width: 80px; height: 80px; }
+      .speaker-entry { grid-template-columns: 56px 1fr; gap: 16px; }
+      footer { flex-direction: column; align-items: flex-start; }
+      footer .footer-meta { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="speakers.html" class="active">Speakers</a></li>
+      <li><a href="about.html">Kara Rodby</a></li>
+      <li><a href="nominate.html">Nominate Speakers</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-title">
+      <h1>Speakers</h1>
+    </div>
+
+    <!-- ── UPCOMING SPEAKER ── -->
+    <div class="upcoming">
+      <div class="upcoming-label">↑ Up Next</div>
+      <div class="upcoming-inner">
+        <div class="upcoming-headshot">
+          <span>Photo<br>Coming<br>Soon</span>
+        </div>
+        <div class="upcoming-details">
+          <div class="upcoming-number">2026.1</div>
+          <div class="upcoming-name placeholder">Speaker Name</div>
+          <div class="upcoming-title placeholder">Talk title TBD</div>
+          <div class="upcoming-desc">Details coming soon. Check back for speaker bio, talk description, and registration link.</div>
+          <div class="upcoming-meta">Date TBD &nbsp;·&nbsp; <a href="#">Register to attend →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PAST SPEAKERS ── -->
+    <div class="section-label">Past Seminars</div>
+
+    <div class="speaker-entry">
+      <div class="speaker-num">2026.0</div>
+      <div class="speaker-info">
+        <div class="speaker-name">Kara Rodby</div>
+        <div class="speaker-talk">"Revisiting the Plot in Clean Energy Tech"</div>
+        <div class="speaker-date">Early 2026</div>
+        <div class="speaker-desc">The talk that inspired this series. Kara examines how the clean energy sector has drifted from the core urgency of the climate crisis — and what it would mean to genuinely reconnect our work to the North Star we've all lost sight of.</div>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=8k7CoP3bILk" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">Lost the Plot</div>
+    <div class="footer-meta">Monthly · Fridays · Lunch<br>A Seminar Series on the State of the Climate</div>
+  </footer>
+
+</body>
+</html>
