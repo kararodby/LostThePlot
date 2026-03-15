@@ -18,7 +18,7 @@
 
     html { background: var(--black); color: var(--white); }
 
-     /* ── NAV ── */
+    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -27,7 +27,7 @@
       border-bottom: 1px solid var(--mid);
       padding: 0 40px;
     }
- 
+
     nav ul {
       max-width: 780px;
       margin: 0 auto;
@@ -37,7 +37,7 @@
       align-items: center;
       height: 48px;
     }
- 
+
     nav a {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
@@ -47,12 +47,12 @@
       text-decoration: none;
       transition: color 0.15s;
     }
- 
+
     nav a:hover,
     nav a.active {
       color: var(--white);
     }
- 
+
     nav a.active {
       color: var(--red);
     }
@@ -173,7 +173,7 @@
 
     /* ── SIGN OFF ── */
     .signoff {
-      margin-top: 12px;
+      margin-top: 56px;
       padding-top: 32px;
       border-top: none;
       display: flex;
@@ -233,6 +233,15 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="about.html">Kara Rodby</a></li>
+      <li><a href="nominate.html">Nominate Speakers</a></li>
+    </ul>
+  </nav>
+
   <header class="hero">
     <span class="logo-lost">LOST</span>
     <div class="logo-the">THE</div>
@@ -261,10 +270,9 @@
     Nonetheless, my hope is that this space will empower folks to ask these questions and have these discussions in addition to — or despite — the limitations of our climate careers. Remember, it is ok to be grateful for and try our best to make change within our jobs, while also simultaneously questioning whether that system serves the end goal.</p>
 
     <p>So join me, once or every month.</p>
-    <p> I hope to see you there,</p>
-    
+
     <div class="signoff">
-      
+      <span class="sign-line">I hope to see you there,</span>
       <span class="sign-name">Kara Rodby</span>
     </div>
   </main>
