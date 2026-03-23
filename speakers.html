@@ -75,6 +75,16 @@
       line-height: 1;
     }
 
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 25px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
     /* ── UPCOMING BANNER ── */
     .upcoming {
       background: var(--gray);
@@ -98,6 +108,12 @@
       grid-template-columns: 120px 1fr;
       gap: 32px;
       align-items: start;
+    }
+
+    .upcoming-left {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .upcoming-headshot {
@@ -140,8 +156,6 @@
       margin-bottom: 4px;
     }
 
-    .upcoming-name.placeholder { color: #444; }
-
     .upcoming-title {
       font-family: 'IBM Plex Serif', Georgia, serif;
       font-style: italic;
@@ -149,8 +163,6 @@
       color: #aaa;
       margin-bottom: 12px;
     }
-
-    .upcoming-title.placeholder { color: #333; }
 
     .upcoming-desc {
       font-family: 'IBM Plex Serif', Georgia, serif;
@@ -174,16 +186,19 @@
 
     .upcoming-meta a:hover { text-decoration: underline; }
 
-    /* ── PAST SPEAKERS ── */
-    .section-label {
+    /* ── LINKEDIN LINK ── */
+    .speaker-linkedin {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 25px;
-      letter-spacing: 0.3em;
+      font-size: 10px;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #555;
-      margin-bottom: 24px;
+      color: var(--red);
+      text-decoration: none;
     }
 
+    .speaker-linkedin:hover { text-decoration: underline; }
+
+    /* ── PAST SPEAKERS ── */
     .speaker-entry {
       display: grid;
       grid-template-columns: 120px 1fr;
@@ -212,9 +227,9 @@
     }
 
     .speaker-photo {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
       object-fit: cover;
       border: 1px solid #444;
       filter: grayscale(100%);
@@ -287,17 +302,6 @@
 
     .speaker-link:hover { text-decoration: underline; }
 
-        .profile-linkedin {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      text-decoration: none;
-    }
-
-    .profile-linkedin:hover { text-decoration: underline; }
-
     /* ── FOOTER ── */
     footer {
       margin-top: 56px;
@@ -353,42 +357,48 @@
       <h1>Speakers</h1>
     </div>
 
-    <!-- ── UPCOMING SPEAKER ── -->
-
+    <!-- ── UPCOMING SPEAKERS ── -->
     <div class="section-label">Upcoming Seminars</div>
 
-    
     <div class="upcoming">
       <div class="upcoming-label">↑ Up Next</div>
+
+      <!-- Quoc Pham -->
       <div class="upcoming-inner">
-        <div class="upcoming-headshot">
-          <span>Photo<br>Coming<br>Soon</span>
+        <div class="upcoming-left">
+          <div class="upcoming-headshot">
+            <span>Photo<br>Coming<br>Soon</span>
+          </div>
+          <a class="speaker-linkedin" href="#" target="_blank">LinkedIn →</a>
         </div>
         <div class="upcoming-details">
           <div class="upcoming-number">2026.1</div>
-          <div class="upcoming-name ">Quoc Pham</div>
-          <a class="profile-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
-      <div class="upcoming-title">Talk Title TBD</div>
+          <div class="upcoming-name">Quoc Pham</div>
+          <div class="upcoming-title">Talk Title TBD</div>
           <div class="upcoming-desc">Details coming soon. Check back soon for the registration link and more info.</div>
-          <div class="upcoming-meta">04/24/26 - 12 - 1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/p1akr6ew">Register to attend →</a></div>
+          <div class="upcoming-meta">04/24/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/p1akr6ew">Register to attend →</a></div>
         </div>
       </div>
 
+      <!-- John Mulrow -->
+      <div style="border-top: 1px solid var(--mid); margin-top: 28px; padding-top: 28px;">
+        <div class="upcoming-inner">
+          <div class="upcoming-left">
+            <div class="upcoming-headshot">
+              <span>Photo<br>Coming<br>Soon</span>
+            </div>
+            <a class="speaker-linkedin" href="#" target="_blank">LinkedIn →</a>
+          </div>
+          <div class="upcoming-details">
+            <div class="upcoming-number">2026.2</div>
+            <div class="upcoming-name">John Mulrow</div>
+            <div class="upcoming-title">Talk Title TBD</div>
+            <div class="upcoming-desc">Details coming soon. Check back soon for the registration link and more info.</div>
+            <div class="upcoming-meta">05/29/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/45c0pkfl">Register to attend →</a></div>
+          </div>
+        </div>
+      </div>
 
-    <div style="border-top: 1px solid var(--mid); margin-top: 28px; padding-top: 28px;">
-  <div class="upcoming-inner">
-    <div class="upcoming-headshot">
-      <span>Photo<br>Coming<br>Soon</span>
-    </div>
-    <div class="upcoming-details">
-        <div class="upcoming-number">2026.2</div>
-      <div class="upcoming-name">John Mulrow</div>
-      <div class="upcoming-title">Talk Title TBD</div>
-      <div class="upcoming-desc"> Details coming soon. Check back soon for the registration link and more info.</div>
-      <div class="upcoming-meta">05/29/26 - 12 - 1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/45c0pkfl">Register to attend →</a></div>
-    </div>
-  </div>
-</div>
     </div>
 
     <!-- ── PAST SPEAKERS ── -->
@@ -398,6 +408,7 @@
       <div class="speaker-left">
         <div class="speaker-num">2026.0</div>
         <img class="speaker-photo" src="Kara_R_0036_Full.jpg" alt="Kara Rodby" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
       </div>
       <div class="speaker-info">
         <div class="speaker-name">Kara Rodby</div>
