@@ -59,7 +59,7 @@
 
   .nav-label {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #888;
@@ -74,11 +74,7 @@
 
   .nav-label:hover { color: var(--white); }
   .nav-label.active { color: var(--red); }
-
-  .nav-label::after {
-    content: '▾';
-    font-size: 9px;
-  }
+  .nav-label::after { content: '▾'; font-size: 9px; }
 
   .dropdown {
     display: none;
@@ -97,7 +93,7 @@
     display: block;
     padding: 10px 16px;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #888;
@@ -105,11 +101,7 @@
     transition: color 0.15s, background 0.15s;
   }
 
-  .dropdown a:hover {
-    color: var(--white);
-    background: var(--gray);
-  }
-
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
   .dropdown a.active { color: var(--red); }
   .nav-item:hover .dropdown { display: block; }
 
@@ -136,12 +128,54 @@
     line-height: 1;
   }
 
-  .placeholder {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+  .copy {
     font-size: clamp(15px, 1.9vw, 17px);
     line-height: 1.82;
-    color: #666;
-    font-style: italic;
+    color: var(--white);
+  }
+
+  .copy p { margin-bottom: 1.5em; }
+
+  .goal-list {
+    list-style: none;
+    margin-top: 1.5em;
+  }
+
+  .goal-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--mid);
+    align-items: start;
+  }
+
+  .goal-item:first-child { border-top: 1px solid var(--mid); }
+
+  .goal-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--red);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .goal-content {}
+
+  .goal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 26px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 8px;
+  }
+
+  .goal-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(14px, 1.7vw, 16px);
+    line-height: 1.78;
+    color: #999;
   }
 
   footer {
@@ -173,6 +207,7 @@
 
   @media (max-width: 560px) {
     body { padding: 40px 24px 60px; }
+    .goal-item { grid-template-columns: 36px 1fr; gap: 12px; }
     footer { flex-direction: column; align-items: flex-start; }
     footer .footer-meta { text-align: left; }
   }
@@ -204,7 +239,71 @@
     <div class="page-title">
       <h1>Goals</h1>
     </div>
-    <p class="placeholder">Content coming soon.</p>
+
+    <div class="copy">
+      <p>Lost The Plot is open to any and all who are interested to join the discussion in good faith. The target audience by design, however, is professionals in climate. For this group, Lost The Plot has the following goals:</p>
+    </div>
+
+    <ol class="goal-list">
+
+      <li class="goal-item">
+        <div class="goal-num">1</div>
+        <div class="goal-content">
+          <div class="goal-title">Intentional Reconnection with Climate</div>
+          <div class="goal-desc">Many of our climate careers don't provide much or any space for engaging with discussions on climate. They take the premise of "we develop or sell a product that is designed to promote sustainability in some way" and that's it. We rarely revisit the climate North Star to ask questions like: Is this product really promoting sustainability, especially in how it's actually being used and deployed? How is society progressing in addressing this problem, given the significant funding and scientific progress made in recent decades?</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">2</div>
+        <div class="goal-content">
+          <div class="goal-title">Reminder of the Urgency of Climate Change</div>
+          <div class="goal-desc">Because we don't talk about climate, many of us have an "out of sight out of mind" issue. Most of us tuning in likely reside in the global North, where we are insulated from much of the worst effects of climate change already taking place today. We quickly forget that we are out of time and that we've made almost no progress despite all of our efforts.</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">3</div>
+        <div class="goal-content">
+          <div class="goal-title">Understand the Systemic Causes of Climate Change</div>
+          <div class="goal-desc">We have been conditioned to think technology development is the main challenge of climate change. It is not. It is the age-old challenge of power structures, inhumane capitalism, and the chokehold of the neoliberal agenda that are the problems. We will talk about the systemic problems and solutions.</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">4</div>
+        <div class="goal-content">
+          <div class="goal-title">Question the Premise of Our Climate Jobs and the Broader Climate Agenda</div>
+          <div class="goal-desc">With these new perspectives in mind, we can revisit our choices. Are we a part of making the impact we want to see, or are we part of a perpetuation of the status quo approach that will ultimately not solve anything? What can we do within and outside of our careers to make more real impact?</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">5</div>
+        <div class="goal-content">
+          <div class="goal-title">Normalize These Conversations</div>
+          <div class="goal-desc">Whether or not we are in a position to make meaningful impact through the action taken in our jobs, having discussions about the real issues at hand is a critical first step. We need to avoid the fallacy that you can't exist within a system and also critique that system. I can work at a venture capital firm and openly critique the limited, economics-first approach of climate tech. Both can be true and the existence of both opinions does not make me a hypocrite or a bad employee or ungrateful for my job. We need to lead by example in spreading more critical thinking, discussion, and hopefully action.</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">6</div>
+        <div class="goal-content">
+          <div class="goal-title">Create Community</div>
+          <div class="goal-desc">Many of us have realized the lack of progress in abating climate change and are increasingly worried about the state of the world. I hope this space reminds you that you are not alone and connects you with likeminded individuals to discuss your feelings and ideas with.</div>
+        </div>
+      </li>
+
+      <li class="goal-item">
+        <div class="goal-num">7</div>
+        <div class="goal-content">
+          <div class="goal-title">Empower Change</div>
+          <div class="goal-desc">Out of critical honesty and aligned community comes empowerment and change. I hope Lost The Plot is one of many stepping stones in getting us towards the world we'd like to see.</div>
+        </div>
+      </li>
+
+    </ol>
+
   </main>
 
   <footer>
