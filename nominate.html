@@ -1,16 +1,13 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
-  <!-- Open Graph meta tags for the link -->
-  <meta property="og:title" content="Nominate Speakers - Lost the Plot" />
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="Nominate Speakers - Lost the Plot" />
 <meta property="og:description" content="Boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge." />
-<meta property="og:url" content="https://lost-the-plot.com" />
-  <meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<meta property="og:url" content="https://lost-the-plot.com/nominate.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
 <link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
-
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
@@ -18,152 +15,186 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5NVY2LXTJE');
 </script>
 
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nominate Speakers — Lost the Plot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nominate Speakers — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black: #2a2a2a ;  
-      --white: #f2f0eb;
-      --red: #d42b2b;
-      --gray: #333333;
-      --mid: #444444 ;
-    }
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
 
-    html { background: var(--black); color: var(--white); }
+  html { background: var(--black); color: var(--white); }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--black);
-      border-bottom: 1px solid var(--mid);
-      padding: 0 40px;
-    }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
 
-    nav ul {
-      max-width: 780px;
-      margin: 0 auto;
-      list-style: none;
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      justify-content: center;
-      height: 48px;
-    }
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
 
-    nav a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+  .nav-item { position: relative; }
 
-    nav a:hover { color: var(--white); }
-    nav a.active { color: var(--red); }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
 
-    body {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      background: var(--black);
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 60px 40px 80px;
-    }
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
 
-    /* ── PAGE TITLE ── */
-    .page-title {
-      margin-top: 52px;
-      margin-bottom: 32px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--red);
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
 
-    .page-title h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(48px, 8vw, 72px);
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1;
-    }
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
 
-    /* ── INTRO ── */
-    .intro {
-      font-size: clamp(15px, 1.9vw, 17px);
-      line-height: 1.82;
-      color: #999;
-      margin-bottom: 48px;
-    }
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
 
-    /* ── FORM EMBED ── */
-    .form-wrap {
-      width: 100%;
-    }
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
 
-    .form-wrap iframe {
-      width: 100%;
-      border: none;
-    }
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
 
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 2px solid var(--red);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
 
-    footer .footer-brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 0.12em;
-      color: var(--red);
-    }
+  .intro {
+    font-size: clamp(15px, 1.9vw, 17px);
+    line-height: 1.82;
+    color: #999;
+    margin-bottom: 48px;
+  }
 
-    footer .footer-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #666;
-      text-align: right;
-    }
+  .form-wrap { width: 100%; }
+  .form-wrap iframe { width: 100%; border: none; }
 
-    @media (max-width: 560px) {
-      body { padding: 40px 24px 60px; }
-      footer { flex-direction: column; align-items: flex-start; }
-      footer .footer-meta { text-align: left; }
-    }
-  </style>
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
 </head>
 <body>
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
-      <li><a href="about.html">Kara Rodby</a></li>
-      <li><a href="nominate.html" class="active">Nominate Speakers</a></li>
+      <li class="nav-item">
+        <span class="nav-label">About</span>
+        <div class="dropdown">
+          <a href="index.html">The Pitch</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label active">Speakers</span>
+        <div class="dropdown">
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
+          <a href="nominate.html" class="active">Nominate a Speaker</a>
+        </div>
+      </li>
     </ul>
   </nav>
 
   <main>
-
     <div class="page-title">
       <h1>Nominate Speakers</h1>
     </div>
@@ -171,10 +202,8 @@
     <p class="intro">Know someone who should speak at Lost the Plot? Nominate them below — or nominate yourself. We're looking for boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge.</p>
 
     <div class="form-wrap">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyMvmC2hDH3cfdKqnx1XeiMc6qNrIaZ1akAFIYVZqnDo6plw/viewform?embedded=true" width="640" height="1214" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScyMvmC2hDH3cfdKqnx1XeiMc6qNrIaZ1akAFIYVZqnDo6plw/viewform?embedded=true" width="640" height="1214" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
-
   </main>
 
   <footer>
