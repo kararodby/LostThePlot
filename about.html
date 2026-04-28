@@ -2,205 +2,235 @@
 <html lang="en">
 <head>
 
-<!-- Open Graph meta tags for the link -->
-  <meta property="og:title" content="About Kara Rodby - Lost the Plot" />
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="About Kara Rodby - Lost the Plot" />
 <meta property="og:description" content="Boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge." />
-<meta property="og:url" content="https://lost-the-plot.com" />
-  <meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<meta property="og:url" content="https://lost-the-plot.com/about.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
 <link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
 
-  
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5NVY2LXTJE');
 </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kara Rodby — Lost the Plot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black: #2a2a2a ;  
-      --white: #f2f0eb;
-      --red: #d42b2b;
-      --gray: #333333;
-      --mid: #444444 ;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kara Rodby — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { background: var(--black); color: var(--white); }
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--black);
-      border-bottom: 1px solid var(--mid);
-      padding: 0 40px;
-    }
+  html { background: var(--black); color: var(--white); }
 
-    nav ul {
-      max-width: 780px;
-      margin: 0 auto;
-      list-style: none;
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      justify-content: center;
-      height: 48px;
-    }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
 
-    nav a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
 
-    nav a:hover { color: var(--white); }
-    nav a.active { color: var(--red); }
+  .nav-item { position: relative; }
 
-    body {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      background: var(--black);
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 60px 40px 80px;
-    }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
 
-    /* ── PAGE TITLE ── */
-    .page-title {
-      margin-top: 52px;
-      margin-bottom: 52px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--red);
-    }
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
 
-    .page-title h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(48px, 8vw, 72px);
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1;
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
 
-    /* ── PROFILE ── */
-    .profile {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
 
-    .profile-left {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
 
-    .profile-photo {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border: 1px solid #444;
-      filter: grayscale(100%);
-    }
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
 
-    .profile-linkedin {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 16px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      text-decoration: none;
-    }
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 52px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
 
-    .profile-linkedin:hover { text-decoration: underline; }
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
 
-    .profile-right {}
+  .profile {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
 
-    .profile-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(36px, 6vw, 52px);
-      letter-spacing: 0.06em;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 24px;
-    }
+  .profile-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    .profile-bio {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      font-size: clamp(15px, 1.9vw, 17px);
-      line-height: 1.82;
-      color: #999;
-    }
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #444;
+    filter: grayscale(100%);
+  }
 
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 2px solid var(--red);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+  .profile-linkedin {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
 
-    a {
-  color: var(--red);
-  text-decoration: none;
-}
+  .profile-linkedin:hover { text-decoration: underline; }
 
-    footer .footer-brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 0.12em;
-      color: var(--red);
-    }
+  .profile-bio {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: clamp(15px, 1.9vw, 17px);
+    line-height: 1.82;
+    color: #999;
+  }
 
-    footer .footer-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #666;
-      text-align: right;
-    }
+  a {
+    color: var(--red);
+    text-decoration: none;
+  }
 
-    @media (max-width: 560px) {
-      body { padding: 40px 24px 60px; }
-      .profile { grid-template-columns: 1fr; }
-      .profile-photo { width: 140px; height: 140px; }
-      footer { flex-direction: column; align-items: flex-start; }
-      footer .footer-meta { text-align: left; }
-    }
-  </style>
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    .profile { grid-template-columns: 1fr; }
+    .profile-photo { width: 140px; height: 140px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
 </head>
 <body>
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="speakers.html">Speakers</a></li>
-      <li><a href="about.html" class="active">Kara Rodby</a></li>
-      <li><a href="nominate.html">Nominate Speakers</a></li>
+      <li class="nav-item">
+        <span class="nav-label active">About</span>
+        <div class="dropdown">
+          <a href="index.html">The Pitch</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html" class="active">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label">Speakers</span>
+        <div class="dropdown">
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
+          <a href="nominate.html">Nominate a Speaker</a>
+        </div>
+      </li>
     </ul>
   </nav>
 
   <main>
-
     <div class="page-title">
       <h1>Kara Rodby</h1>
     </div>
@@ -211,19 +241,9 @@
         <a class="profile-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
       </div>
       <div class="profile-right">
-        <div class="profile-bio">Kara Rodby is the founder of Lost the Plot. Kara has spent the last 5 years as a Principal at a thematic venture capital firm - <a href="https://volta.vc/">Volta Energy Technologies</a>  - with a 
-          portfolio of largely early-stage, battery hard tech companies. At Volta, she supports the portfolio through board roles, executes technically-focused due diligence, and manages the firm's corporate relationships. 
-          This has included operator stints within the portfolio, such as her recent position as NanoGraf's Chief Strategy Officer from January 2026 on. Before this, Kara received her BS from Northwestern University (2017) as well as both 
-          an MS and a PhD in Chemical Engineering from the Massachusetts Institute of Technology (2022). At MIT, Kara's <a href="https://scholar.google.com/citations?user=spHl80EAAAAJ&hl=en&oi=ao">research</a> and thesis focused on 
-          techno-economic design of chemistries for redox flow batteries. Kara was named <a href="https://www.forbes.com/profile/kara-rodby/">Forbes 30 Under 30 for Energy in 2024</a>. In addition to her career in climate, Kara has 
-          significant experience as an organizer and activist. Most notably, Kara was a lead organizer for the MIT Graduate Student Union, where she
-          helped the ~4k student bargaining unit organize for an election over a two-year period, which ended in a successful unionization vote. Kara is now merging those two worlds - her climate career and her unique experience 
-          driving hard conversations and building movements - through her thought leadership on the state of the climate agenda and by convening this seminar series. She supports her community and promotes further movement building through two  
-          nonprofit engagements as well, sitting on the boards of <a href="https://www.degrowthinstitute.org/">the Degrowth Institue (DGI)</a> and the <a href="https://www.paytonalumni.com/">Payton Alumni Community & Endowment (PACE)</a>.
-        </div>
+        <div class="profile-bio">Kara Rodby is the founder of Lost the Plot. Kara has spent the last 5 years as a Principal at a thematic venture capital firm - <a href="https://volta.vc/">Volta Energy Technologies</a> - with a portfolio of largely early-stage, battery hard tech companies. At Volta, she supports the portfolio through board roles, executes technically-focused due diligence, and manages the firm's corporate relationships. This has included operator stints within the portfolio, such as her recent position as NanoGraf's Chief Strategy Officer from January 2026 on. Before this, Kara received her BS from Northwestern University (2017) as well as both an MS and a PhD in Chemical Engineering from the Massachusetts Institute of Technology (2022). At MIT, Kara's <a href="https://scholar.google.com/citations?user=spHl80EAAAAJ&hl=en&oi=ao">research</a> and thesis focused on techno-economic design of chemistries for redox flow batteries. Kara was named <a href="https://www.forbes.com/profile/kara-rodby/">Forbes 30 Under 30 for Energy in 2024</a>. In addition to her career in climate, Kara has significant experience as an organizer and activist. Most notably, Kara was a lead organizer for the MIT Graduate Student Union, where she helped the ~4k student bargaining unit organize for an election over a two-year period, which ended in a successful unionization vote. Kara is now merging those two worlds - her climate career and her unique experience driving hard conversations and building movements - through her thought leadership on the state of the climate agenda and by convening this seminar series. She supports her community and promotes further movement building through two nonprofit engagements as well, sitting on the boards of <a href="https://www.degrowthinstitute.org/">the Degrowth Institute (DGI)</a> and the <a href="https://www.paytonalumni.com/">Payton Alumni Community &amp; Endowment (PACE)</a>.</div>
       </div>
     </div>
-
   </main>
 
   <footer>
