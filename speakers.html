@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
 
-  <!-- Open Graph meta tags for the link -->
-  <meta property="og:title" content="Upcoming and Past Speakers - Lost the Plot" />
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="Upcoming and Past Speakers - Lost the Plot" />
 <meta property="og:description" content="Boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge." />
-<meta property="og:url" content="https://lost-the-plot.com" />
-  <meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<meta property="og:url" content="https://lost-the-plot.com/speakers.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
 <link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
-
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
@@ -16,372 +15,404 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5NVY2LXTJE');
 </script>
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Speakers — Lost the Plot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black: #2a2a2a;
-      --white: #f2f0eb;
-      --red: #d42b2b;
-      --gray: #333333;
-      --mid: #444444;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Speakers — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { background: var(--black); color: var(--white); }
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--black);
-      border-bottom: 1px solid var(--mid);
-      padding: 0 40px;
-    }
+  html { background: var(--black); color: var(--white); }
 
-    nav ul {
-      max-width: 780px;
-      margin: 0 auto;
-      list-style: none;
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      justify-content: center;
-      height: 48px;
-    }
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
 
-    nav a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
 
-    nav a:hover { color: var(--white); }
-    nav a.active { color: var(--red); }
+  .nav-item { position: relative; }
 
-    body {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      background: var(--black);
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 60px 40px 80px;
-    }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
 
-    /* ── PAGE TITLE ── */
-    .page-title {
-      margin-top: 52px;
-      margin-bottom: 52px;
-      padding-bottom: 24px;
-      border-bottom: 2px solid var(--red);
-    }
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
 
-    .page-title h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(48px, 8vw, 72px);
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1;
-    }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
 
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 25px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 24px;
-    }
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
 
-    /* ── UPCOMING BANNER ── */
-    .upcoming {
-      background: var(--gray);
-      border: 1px solid var(--mid);
-      border-left: 4px solid var(--red);
-      padding: 36px 40px;
-      margin-bottom: 64px;
-    }
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
 
-    .upcoming-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 24px;
-    }
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
 
-    .upcoming-inner {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 32px;
-      align-items: start;
-    }
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 52px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
 
-    .upcoming-left {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
 
-    .upcoming-headshot {
-      width: 120px;
-      height: 120px;
-      background: var(--mid);
-      border: 1px solid #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 25px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 24px;
+  }
 
-    .upcoming-headshot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
+  .upcoming {
+    background: var(--gray);
+    border: 1px solid var(--mid);
+    border-left: 4px solid var(--red);
+    padding: 36px 40px;
+    margin-bottom: 64px;
+  }
 
-    .upcoming-headshot span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #777;
-      text-align: center;
-      line-height: 1.5;
-      padding: 8px;
-    }
+  .upcoming-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
 
-    .upcoming-number {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 6px;
-    }
+  .upcoming-inner {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
 
-    /* Talk title = big display text */
-    .upcoming-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(24px, 4vw, 36px);
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 6px;
-    }
+  .upcoming-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    /* Speaker name = smaller, understated */
-    .upcoming-name {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 16px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 12px;
-    }
+  .upcoming-headshot {
+    width: 120px;
+    height: 120px;
+    background: var(--mid);
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
 
-    .upcoming-desc {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #888;
-      margin-bottom: 16px;
-    }
+  .upcoming-headshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+  }
 
-    .upcoming-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      letter-spacing: 0.1em;
-      color: white;
-    }
+  .upcoming-headshot span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #777;
+    text-align: center;
+    line-height: 1.5;
+    padding: 8px;
+  }
 
-    .upcoming-meta a {
-      color: var(--red);
-      text-decoration: none;
-    }
+  .upcoming-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 6px;
+  }
 
-    .upcoming-meta a:hover { text-decoration: underline; }
+  .upcoming-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
 
-    /* ── LINKEDIN LINK ── */
-    .speaker-linkedin {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      text-decoration: none;
-    }
+  .upcoming-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 12px;
+  }
 
-    .speaker-linkedin:hover { text-decoration: underline; }
+  .upcoming-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #888;
+    margin-bottom: 16px;
+  }
 
-    /* ── PAST SPEAKERS ── */
-    .speaker-entry {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 28px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--mid);
-      align-items: start;
-    }
+  .upcoming-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: white;
+  }
 
-    .speaker-entry:first-of-type {
-      border-top: 1px solid var(--mid);
-    }
+  .upcoming-meta a {
+    color: var(--red);
+    text-decoration: none;
+  }
 
-    .speaker-left {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+  .upcoming-meta a:hover { text-decoration: underline; }
 
-    .speaker-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 32px;
-      letter-spacing: 0.06em;
-      color: var(--red);
-      line-height: 1;
-    }
+  .speaker-linkedin {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
 
-    .speaker-photo {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border: 1px solid #555;
-      filter: grayscale(100%);
-    }
+  .speaker-linkedin:hover { text-decoration: underline; }
 
-    .speaker-photo-placeholder {
-      width: 120px;
-      height: 120px;
-      background: var(--mid);
-      border: 1px solid #555;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .speaker-entry {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--mid);
+    align-items: start;
+  }
 
-    .speaker-photo-placeholder span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 8px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #777;
-      text-align: center;
-      line-height: 1.5;
-    }
+  .speaker-entry:first-of-type { border-top: 1px solid var(--mid); }
 
-    .speaker-info {}
+  .speaker-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 
-    /* Talk title = big display text */
-    .speaker-talk {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(20px, 3vw, 28px);
-      letter-spacing: 0.04em;
-      color: var(--white);
-      line-height: 1.05;
-      margin-bottom: 6px;
-    }
+  .speaker-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    color: var(--red);
+    line-height: 1;
+  }
 
-    /* Speaker name = smaller, understated */
-    .speaker-name {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 16px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 8px;
-    }
+  .speaker-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid #555;
+    filter: grayscale(100%);
+  }
 
-    .speaker-date {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: white;
-      margin-bottom: 10px;
-    }
+  .speaker-photo-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--mid);
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .speaker-desc {
-      font-family: 'IBM Plex Serif', Georgia, serif;
-      font-size: 14px;
-      line-height: 1.75;
-      color: #999;
-      margin-bottom: 12px;
-    }
+  .speaker-photo-placeholder span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #777;
+    text-align: center;
+    line-height: 1.5;
+  }
 
-    .speaker-link {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 13px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--red);
-      text-decoration: none;
-    }
+  .speaker-talk {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
 
-    .speaker-link:hover { text-decoration: underline; }
+  .speaker-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
 
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 56px;
-      padding-top: 24px;
-      border-top: 2px solid var(--red);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+  .speaker-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 10px;
+  }
 
-    footer .footer-brand {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 0.12em;
-      color: var(--red);
-    }
+  .speaker-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #999;
+    margin-bottom: 12px;
+  }
 
-    footer .footer-meta {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #666;
-      text-align: right;
-    }
+  .speaker-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
 
-    @media (max-width: 560px) {
-      body { padding: 40px 24px 60px; }
-      .upcoming-inner { grid-template-columns: 1fr; }
-      .upcoming-headshot { width: 80px; height: 80px; }
-      .speaker-entry { grid-template-columns: 80px 1fr; gap: 16px; }
-      footer { flex-direction: column; align-items: flex-start; }
-      footer .footer-meta { text-align: left; }
-    }
-  </style>
+  .speaker-link:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    .upcoming-inner { grid-template-columns: 1fr; }
+    .upcoming-headshot { width: 80px; height: 80px; }
+    .speaker-entry { grid-template-columns: 80px 1fr; gap: 16px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
 </head>
 <body>
 
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="speakers.html" class="active">Speakers</a></li>
-      <li><a href="about.html">Kara Rodby</a></li>
-      <li><a href="nominate.html">Nominate Speakers</a></li>
+      <li class="nav-item">
+        <span class="nav-label">About</span>
+        <div class="dropdown">
+          <a href="index.html">The Pitch</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label active">Speakers</span>
+        <div class="dropdown">
+          <a href="speakers.html" class="active">Upcoming &amp; Past Speakers</a>
+          <a href="nominate.html">Nominate a Speaker</a>
+        </div>
+      </li>
     </ul>
   </nav>
 
@@ -391,16 +422,15 @@
       <h1>Speakers</h1>
     </div>
 
-<p style="font-family: 'IBM Plex Serif', Georgia, serif; font-size: 15px; line-height: 1.7; color: #aaa; margin-bottom: 16px; text-align: center;">Can't make it live? All talks are recorded and posted to <a href="https://www.youtube.com/@LostThePlot-Seminar" target="_blank" style="color: var(--red); text-decoration: none;">YouTube</a>. Check back here after each session.</p>
+    <p style="font-family: 'IBM Plex Serif', Georgia, serif; font-size: 15px; line-height: 1.7; color: #aaa; margin-bottom: 16px; text-align: center;">Can't make it live? All talks are recorded and posted to <a href="https://www.youtube.com/@LostThePlot-Seminar" target="_blank" style="color: var(--red); text-decoration: none;">YouTube</a>. Check back here after each session.</p>
 
-<div style="margin-bottom: 40px; text-align: center;">
-  <a href="https://calendar.google.com/calendar/r?cid=c7588921b6bec5b49550a8d6353ab555a775cfd3ce3b370357a7d0d971cc8d2a@group.calendar.google.com" target="_blank" class="speaker-linkedin">+ Subscribe to all future seminars via Google Calendar →</a>
- 
- <br><br>
-  <a href="https://calendar.google.com/calendar/ical/c7588921b6bec5b49550a8d6353ab555a775cfd3ce3b370357a7d0d971cc8d2a%40group.calendar.google.com/public/basic.ics" class="speaker-linkedin">+ Subscribe to all future seminars via iCal (Apple/Outlook) →</a>
-</div>
+    <div style="margin-bottom: 40px; text-align: center;">
+      <a href="https://calendar.google.com/calendar/r?cid=c7588921b6bec5b49550a8d6353ab555a775cfd3ce3b370357a7d0d971cc8d2a@group.calendar.google.com" target="_blank" class="speaker-linkedin">+ Subscribe to all future seminars via Google Calendar →</a>
+      <br><br>
+      <a href="https://calendar.google.com/calendar/ical/c7588921b6bec5b49550a8d6353ab555a775cfd3ce3b370357a7d0d971cc8d2a%40group.calendar.google.com/public/basic.ics" class="speaker-linkedin">+ Subscribe to all future seminars via iCal (Apple/Outlook) →</a>
+    </div>
 
-    <!-- ──────────────────── UPCOMING SPEAKERS ──────────── -->
+    <!-- ── UPCOMING SPEAKERS ── -->
     <div class="section-label">Upcoming Seminars</div>
 
     <div class="upcoming">
@@ -410,7 +440,7 @@
       <div class="upcoming-inner">
         <div class="upcoming-left">
           <div class="upcoming-headshot">
-              <img src="headshots/jm-dgi-green.jpg" alt="John Mulrow" />
+            <img src="headshots/jm-dgi-green.jpg" alt="John Mulrow" />
           </div>
           <a class="speaker-linkedin" href="https://www.linkedin.com/in/johnmulrow/" target="_blank">LinkedIn →</a>
         </div>
@@ -418,10 +448,7 @@
           <div class="upcoming-number">2026.2</div>
           <div class="upcoming-title">Degrowth: A Just Transition to a Smaller Global Economy</div>
           <div class="upcoming-name">John Mulrow</div>
-          <div class="upcoming-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. 
-            In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful 
-            consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation will 
-            introduce the work of DGI and present key insights from our work promoting economic downscaling as a path toward true sustainability. </div>
+          <div class="upcoming-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation will introduce the work of DGI and present key insights from our work promoting economic downscaling as a path toward true sustainability.</div>
           <div class="upcoming-meta">05/29/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/45c0pkfl" target="_blank">Register to attend →</a></div>
         </div>
       </div>
@@ -455,12 +482,10 @@
             <a class="speaker-linkedin" href="https://www.linkedin.com/in/bibatshuthapachhetri/" target="_blank">LinkedIn →</a>
           </div>
           <div class="upcoming-details">
-            <div class="upcoming-number">2026.3</div>
-            <div class="upcoming-title">Replicas for Sovereignty: What Tuvalu's turn to digital statehood teaches us about climate injustice</div>
+            <div class="upcoming-number">2026.4</div>
+            <div class="upcoming-title">Replicas for Sovereignty: What Tuvalu's Turn to Digital Statehood Teaches Us About Climate Injustice</div>
             <div class="upcoming-name">Bibatshu Thapa Chhetri</div>
-            <div class="upcoming-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation -- a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.
-
-​</div>
+            <div class="upcoming-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation — a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.</div>
             <div class="upcoming-meta">07/31/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/xajunbwf" target="_blank">Register to attend →</a></div>
           </div>
         </div>
@@ -468,10 +493,10 @@
 
     </div>
 
-    <!-- ──────────────────── PAST SPEAKERS ────────────────────────────────── -->
+    <!-- ── PAST SPEAKERS ── -->
     <div class="section-label">Past Seminars</div>
 
-    <!-- Quoc Pham -->
+    <!-- 2026.1 · Quoc Pham · April 2026 -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.1</div>
@@ -482,16 +507,12 @@
         <div class="speaker-talk">The Future Arrived Early</div>
         <div class="speaker-name">Quoc Pham</div>
         <div class="speaker-date">April 2026</div>
-        <div class="speaker-desc">Paradoxically, as the planet heats up at an accelerating pace, attention and effort toward climate mitigation 
-          are fading. Against that backdrop, this talk offers an unconventional but pragmatic perspective from a chemist applying systems thinking 
-          to expose the real challenges, show how comforting narratives fail just as acceleration begins, and reveal the risks of pursuing solutions 
-          built on the wrong plot.</div>
-                <a class="speaker-link" href="https://www.youtube.com/watch?v=dWelaNGlSNY" target="_blank">Watch on YouTube →</a>
-
+        <div class="speaker-desc">Paradoxically, as the planet heats up at an accelerating pace, attention and effort toward climate mitigation are fading. Against that backdrop, this talk offers an unconventional but pragmatic perspective from a chemist applying systems thinking to expose the real challenges, show how comforting narratives fail just as acceleration begins, and reveal the risks of pursuing solutions built on the wrong plot.</div>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=dWelaNGlSNY" target="_blank">Watch on YouTube →</a>
       </div>
     </div>
 
-    <!-- Kara Rodby -->
+    <!-- 2026.0 · Kara Rodby · January 2026 -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.0</div>
