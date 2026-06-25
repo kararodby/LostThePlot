@@ -1,1 +1,273 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5NVY2LXTJE');
+</script>
+
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="In-Person & Co-Sponsored Events — Lost the Plot" />
+<meta property="og:description" content="Boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge." />
+<meta property="og:url" content="https://lost-the-plot.com/events.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>In-Person & Co-Sponsored Events — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
+
+  html { background: var(--black); color: var(--white); }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
+
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .nav-item { position: relative; }
+
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
+
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
+
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 52px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
+
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 7vw, 64px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 25px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  .upcoming {
+    background: var(--gray);
+    border: 1px solid var(--mid);
+    border-left: 4px solid var(--red);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+  }
+
+  .upcoming-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .event-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 10px;
+  }
+
+  .event-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .event-meta a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .event-meta a:hover { text-decoration: underline; }
+
+  .event-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.78;
+    color: #888;
+    margin-top: 20px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    .upcoming { padding: 24px 20px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li class="nav-item">
+        <span class="nav-label">About</span>
+        <div class="dropdown">
+          <a href="index.html">The Pitch</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label active">Speakers</span>
+        <div class="dropdown">
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
+          <a href="events.html" class="active">In-Person &amp; Co-Sponsored Events</a>
+          <a href="nominate.html">Nominate a Speaker</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-title">
+      <h1>In-Person &amp; Co-Sponsored Events</h1>
+    </div>
+
+    <div class="section-label">Upcoming Events</div>
+
+    <div class="upcoming">
+      <div class="upcoming-label">↑ Up Next</div>
+      <div class="event-title">Losing Growth, Finding the Plot: A Conversation About a Just Transition to a Smaller Global Economy</div>
+      <div class="event-meta">Thursday, July 23 · 5:30–7 PM &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: Degrowth Institute</div>
+      <div class="event-meta"><a href="https://www.zeffy.com/en-US/ticketing/chicago-climate-week-degrowth-a-just-transtion-to-a-smaller-global-economy" target="_blank">Register to attend →</a></div>
+      <div class="event-desc">Join Chicago's own Degrowth Institute (DGI) and Lost The Plot (LTP) for a short presentation and discussion on challenges to economic growth and circularity in our economy. DGI's Programs Coordinator, Jason Barahona Rosales, will give a short primer on degrowth, which calls for a just transition to a smaller economy. Then Madeleine Sullivan, a Digital Business Analyst at Caterpillar with deep expertise in circular economies, will give a brief history of how we became a single-use, disposable consumer product society, and discuss how our conversations about sustainability rarely attempt to actually challenge underserving status quo systems.
+      <br><br>The most interesting Climate Week event you'll attend! Balance out your networking with some real discussion on what needs to be done to address our climate goals and meet folks working and fighting for real change.</div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">Lost the Plot</div>
+    <div class="footer-meta">Monthly · Fridays · Lunch<br>A Seminar Series on the State of the Climate</div>
+  </footer>
+
+</body>
+</html>
