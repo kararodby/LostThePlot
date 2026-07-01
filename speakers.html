@@ -291,26 +291,6 @@
     filter: grayscale(100%);
   }
 
-  .speaker-photo-placeholder {
-    width: 120px;
-    height: 120px;
-    background: var(--mid);
-    border: 1px solid #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .speaker-photo-placeholder span {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 8px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #777;
-    text-align: center;
-    line-height: 1.5;
-  }
-
   .speaker-talk {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(20px, 3vw, 28px);
@@ -356,6 +336,19 @@
   }
 
   .speaker-link:hover { text-decoration: underline; }
+
+  .view-all {
+    display: block;
+    margin-top: 32px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .view-all:hover { text-decoration: underline; }
 
   footer {
     margin-top: 56px;
@@ -411,8 +404,7 @@
         <div class="dropdown">
           <a href="speakers.html" class="active">Upcoming &amp; Past Speakers</a>
           <a href="nominate.html">Nominate a Speaker</a>
-       <a href="events.html">In-Person &amp; Co-Sponsored Events</a>
-
+          <a href="events.html">In-Person &amp; Co-Sponsored Events</a>
         </div>
       </li>
     </ul>
@@ -438,45 +430,24 @@
     <div class="upcoming">
       <div class="upcoming-label">↑ Up Next</div>
 
-      <!-- Kara Rodby -->
-      <div style="border-top: 1px solid var(--mid); margin-top: 28px; padding-top: 28px;">
-        <div class="upcoming-inner">
-          <div class="upcoming-left">
-            <div class="upcoming-headshot">
-              <img src="headshots/Kara_R_0036_Full.jpg?v=2" style="object-position: top;" alt="Kara Rodby" />
-            </div>
-            <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
+      <!-- 2026.4 · Bibatshu Thapa Chhetri -->
+      <div class="upcoming-inner">
+        <div class="upcoming-left">
+          <div class="upcoming-headshot">
+            <img src="headshots/Bibatshu Headshot.jpg" alt="Bibatshu Thapa Chhetri" />
           </div>
-          <div class="upcoming-details">
-            <div class="upcoming-number">2026.3</div>
-            <div class="upcoming-title">AI Won't Save Us, and Neither Will the Pentagon</div>
-            <div class="upcoming-name">Kara Rodby</div>
-            <div class="upcoming-desc">Everywhere, newsletters and podcasts are discussing the "pivot" climate tech is facing — a pivot to national security/defense, reliability/resilience, AI/grid infrastructure, to later stage companies with revenue, etc. — as if it is just a practicality of the times. Kara Rodby discusses why these reframings are not inherently climate tech and, in fact, are quite dangerous to the climate movement.</div>
-            <div class="upcoming-meta">06/26/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/4zqssg4u" target="_blank">Register to attend →</a></div>
-          </div>
+          <a class="speaker-linkedin" href="https://www.linkedin.com/in/bibatshuthapachhetri/" target="_blank">LinkedIn →</a>
+        </div>
+        <div class="upcoming-details">
+          <div class="upcoming-number">2026.4</div>
+          <div class="upcoming-title">Replicas for Sovereignty: What Tuvalu's Turn to Digital Statehood Teaches Us About Climate Injustice</div>
+          <div class="upcoming-name">Bibatshu Thapa Chhetri</div>
+          <div class="upcoming-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation — a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.</div>
+          <div class="upcoming-meta">07/31/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/xajunbwf" target="_blank">Register to attend →</a></div>
         </div>
       </div>
 
-      <!-- Bibatshu Thapa Chhetri -->
-      <div style="border-top: 1px solid var(--mid); margin-top: 28px; padding-top: 28px;">
-        <div class="upcoming-inner">
-          <div class="upcoming-left">
-            <div class="upcoming-headshot">
-              <img src="headshots/Bibatshu Headshot.jpg" alt="Bibatshu Thapa Chhetri" />
-            </div>
-            <a class="speaker-linkedin" href="https://www.linkedin.com/in/bibatshuthapachhetri/" target="_blank">LinkedIn →</a>
-          </div>
-          <div class="upcoming-details">
-            <div class="upcoming-number">2026.4</div>
-            <div class="upcoming-title">Replicas for Sovereignty: What Tuvalu's Turn to Digital Statehood Teaches Us About Climate Injustice</div>
-            <div class="upcoming-name">Bibatshu Thapa Chhetri</div>
-            <div class="upcoming-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation — a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.</div>
-            <div class="upcoming-meta">07/31/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/xajunbwf" target="_blank">Register to attend →</a></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Danielle Levy -->
+      <!-- 2026.5 · Danielle Levy -->
       <div style="border-top: 1px solid var(--mid); margin-top: 28px; padding-top: 28px;">
         <div class="upcoming-inner">
           <div class="upcoming-left">
@@ -487,14 +458,9 @@
           </div>
           <div class="upcoming-details">
             <div class="upcoming-number">2026.5</div>
-            <div class="upcoming-title">Money Makes The World Go Hot: How extreme wealth and inequality are a climate problem</div>
+            <div class="upcoming-title">Money Makes The World Go Hot: How Extreme Wealth and Inequality Are a Climate Problem</div>
             <div class="upcoming-name">Danielle Levy</div>
-            <div class="upcoming-desc">Extreme wealth isn’t just unfair - it’s a climate problem. From carbon-intensive lifestyles to investments 
-              in carbon-intensive industry, the hoarding and pursuit of wealth is driving the climate crisis. Such wealth is fueling anti-climate 
-              politicians and the perpetuation of the petrostate while depriving those most impacted from the funds needed for mitigation and adaptation. 
-              At the same time, there is enormous potential in the pocketbooks of everyday Americans to interrupt this cycle. In this presentation, policy, 
-              climate, and finance researcher Danielle Levy will explore the insidious ways wealth and inequality hold us back from achieving a better future 
-              and highlight opportunities to leverage the world's economic power for climate justice.</div>
+            <div class="upcoming-desc">Extreme wealth isn't just unfair — it's a climate problem. From carbon-intensive lifestyles to investments in carbon-intensive industry, the hoarding and pursuit of wealth is driving the climate crisis. Such wealth is fueling anti-climate politicians and the perpetuation of the petrostate while depriving those most impacted from the funds needed for mitigation and adaptation. At the same time, there is enormous potential in the pocketbooks of everyday Americans to interrupt this cycle. In this presentation, policy, climate, and finance researcher Danielle Levy will explore the insidious ways wealth and inequality hold us back from achieving a better future and highlight opportunities to leverage the world's economic power for climate justice.</div>
             <div class="upcoming-meta">08/28/26 · 12–1 PM Central &nbsp;·&nbsp; <a href="https://luma.com/s3w8enhl" target="_blank">Register to attend →</a></div>
           </div>
         </div>
@@ -502,11 +468,26 @@
 
     </div>
 
-    <!-- ── PAST SPEAKERS ── -->
+    <!-- ── PAST SPEAKERS (3 most recent) ── -->
     <div class="section-label">Past Seminars</div>
 
+    <!-- 2026.3 · Kara Rodby · June 2026 -->
+    <div class="speaker-entry">
+      <div class="speaker-left">
+        <div class="speaker-num">2026.3</div>
+        <img class="speaker-photo" src="headshots/Kara_R_0036_Full.jpg?v=2" style="object-position: top;" alt="Kara Rodby" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-talk">AI Won't Save Us, and Neither Will the Pentagon</div>
+        <div class="speaker-name">Kara Rodby</div>
+        <div class="speaker-date">June 2026</div>
+        <div class="speaker-desc">Everywhere, newsletters and podcasts are discussing the "pivot" climate tech is facing — a pivot to national security/defense, reliability/resilience, AI/grid infrastructure, to later stage companies with revenue, etc. — as if it is just a practicality of the times. Kara Rodby discusses why these reframings are not inherently climate tech and, in fact, are quite dangerous to the climate movement.</div>
+        <a class="speaker-link" href="#" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
     <!-- 2026.2 · John Mulrow · May 2026 -->
-   
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.2</div>
@@ -517,11 +498,11 @@
         <div class="speaker-talk">Degrowth: A Just Transition to a Smaller Global Economy</div>
         <div class="speaker-name">John Mulrow</div>
         <div class="speaker-date">May 2026</div>
-        <div class="speaker-desc"> Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation will introduce the work of DGI and present key insights from our work promoting economic downscaling as a path toward true sustainability.</div>
+        <div class="speaker-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation will introduce the work of DGI and present key insights from our work promoting economic downscaling as a path toward true sustainability.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=qrBmO_wDcNs" target="_blank">Watch on YouTube →</a>
-        </div>
       </div>
-    
+    </div>
+
     <!-- 2026.1 · Quoc Pham · April 2026 -->
     <div class="speaker-entry">
       <div class="speaker-left">
@@ -538,21 +519,7 @@
       </div>
     </div>
 
-    <!-- 2026.0 · Kara Rodby · January 2026 -->
-    <div class="speaker-entry">
-      <div class="speaker-left">
-        <div class="speaker-num">2026.0</div>
-        <img class="speaker-photo" src="headshots/Kara_R_0036_Full.jpg?v=2" style="object-position: top;" alt="Kara Rodby" />
-        <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
-      </div>
-      <div class="speaker-info">
-        <div class="speaker-talk">Revisiting the Plot in Clean Energy Tech</div>
-        <div class="speaker-name">Kara Rodby</div>
-        <div class="speaker-date">January 2026</div>
-        <div class="speaker-desc">The talk that inspired this series. Kara Rodby examines how the role of venture capital and startups drive the central thrust of today's Clean Tech 2.0 movement, and how this model is doomed to fail investors and the climate.</div>
-        <a class="speaker-link" href="https://www.youtube.com/watch?v=8k7CoP3bILk" target="_blank">Watch on YouTube →</a>
-      </div>
-    </div>
+    <a href="past-speakers.html" class="view-all">View all past seminars →</a>
 
   </main>
 
