@@ -1,1 +1,374 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="All Past Speakers - Lost the Plot" />
+<meta property="og:description" content="Boundary-pushing talks on the state of the climate, its effects on the living world, and the real causes and solutions to this generation-defining challenge." />
+<meta property="og:url" content="https://lost-the-plot.com/past-speakers.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5NVY2LXTJE');
+</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>All Past Speakers — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
+
+  html { background: var(--black); color: var(--white); }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
+
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .nav-item { position: relative; }
+
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
+
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
+
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 16px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
+
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #666;
+    text-decoration: none;
+  }
+
+  .back-link:hover { color: var(--white); }
+
+  .speaker-linkedin {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .speaker-linkedin:hover { text-decoration: underline; }
+
+  .speaker-entry {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 28px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--mid);
+    align-items: start;
+  }
+
+  .speaker-entry:first-of-type { border-top: 1px solid var(--mid); }
+
+  .speaker-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .speaker-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    color: var(--red);
+    line-height: 1;
+  }
+
+  .speaker-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 1px solid #555;
+    filter: grayscale(100%);
+  }
+
+  .speaker-talk {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 28px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 6px;
+  }
+
+  .speaker-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  .speaker-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .speaker-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  .speaker-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .speaker-link:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    .speaker-entry { grid-template-columns: 80px 1fr; gap: 16px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li class="nav-item">
+        <span class="nav-label">About</span>
+        <div class="dropdown">
+          <a href="index.html">The Pitch</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label active">Speakers</span>
+        <div class="dropdown">
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
+          <a href="nominate.html">Nominate a Speaker</a>
+          <a href="events.html">In-Person &amp; Co-Sponsored Events</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-title">
+      <h1>All Past Seminars</h1>
+    </div>
+
+    <a href="speakers.html" class="back-link">← Back to Speakers</a>
+
+    <!-- 2026.3 · Kara Rodby · June 2026 -->
+    <div class="speaker-entry">
+      <div class="speaker-left">
+        <div class="speaker-num">2026.3</div>
+        <img class="speaker-photo" src="headshots/Kara_R_0036_Full.jpg?v=2" style="object-position: top;" alt="Kara Rodby" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-talk">AI Won't Save Us, and Neither Will the Pentagon</div>
+        <div class="speaker-name">Kara Rodby</div>
+        <div class="speaker-date">June 2026</div>
+        <div class="speaker-desc">Everywhere, newsletters and podcasts are discussing the "pivot" climate tech is facing — a pivot to national security/defense, reliability/resilience, AI/grid infrastructure, to later stage companies with revenue, etc. — as if it is just a practicality of the times. Kara Rodby discusses why these reframings are not inherently climate tech and, in fact, are quite dangerous to the climate movement.</div>
+        <a class="speaker-link" href="#" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
+    <!-- 2026.2 · John Mulrow · May 2026 -->
+    <div class="speaker-entry">
+      <div class="speaker-left">
+        <div class="speaker-num">2026.2</div>
+        <img class="speaker-photo" src="headshots/jm-dgi-green.jpg" alt="John Mulrow" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/johnmulrow/" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-talk">Degrowth: A Just Transition to a Smaller Global Economy</div>
+        <div class="speaker-name">John Mulrow</div>
+        <div class="speaker-date">May 2026</div>
+        <div class="speaker-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation will introduce the work of DGI and present key insights from our work promoting economic downscaling as a path toward true sustainability.</div>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=qrBmO_wDcNs" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
+    <!-- 2026.1 · Quoc Pham · April 2026 -->
+    <div class="speaker-entry">
+      <div class="speaker-left">
+        <div class="speaker-num">2026.1</div>
+        <img class="speaker-photo" src="headshots/Quoc Pham Headshot B&W 2026.jpg" alt="Quoc Pham" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/quoc-pham-ba25a720/" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-talk">The Future Arrived Early</div>
+        <div class="speaker-name">Quoc Pham</div>
+        <div class="speaker-date">April 2026</div>
+        <div class="speaker-desc">Paradoxically, as the planet heats up at an accelerating pace, attention and effort toward climate mitigation are fading. Against that backdrop, this talk offers an unconventional but pragmatic perspective from a chemist applying systems thinking to expose the real challenges, show how comforting narratives fail just as acceleration begins, and reveal the risks of pursuing solutions built on the wrong plot.</div>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=dWelaNGlSNY" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
+    <!-- 2026.0 · Kara Rodby · January 2026 -->
+    <div class="speaker-entry">
+      <div class="speaker-left">
+        <div class="speaker-num">2026.0</div>
+        <img class="speaker-photo" src="headshots/Kara_R_0036_Full.jpg?v=2" style="object-position: top;" alt="Kara Rodby" />
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/kara-rodby" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="speaker-info">
+        <div class="speaker-talk">Revisiting the Plot in Clean Energy Tech</div>
+        <div class="speaker-name">Kara Rodby</div>
+        <div class="speaker-date">January 2026</div>
+        <div class="speaker-desc">The talk that inspired this series. Kara Rodby examines how the role of venture capital and startups drive the central thrust of today's Clean Tech 2.0 movement, and how this model is doomed to fail investors and the climate.</div>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=8k7CoP3bILk" target="_blank">Watch on YouTube →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">Lost the Plot</div>
+    <div class="footer-meta">Monthly · Fridays · 12 - 1 PM CT<br>A Seminar Series on the State of the Climate</div>
+  </footer>
+
+</body>
+</html>
