@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,6 +186,23 @@
     margin-top: 20px;
   }
 
+  .event-photo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-top: 28px;
+    border: 1px solid var(--mid);
+  }
+
+  .no-events {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 64px;
+  }
+
   footer {
     margin-top: 56px;
     padding-top: 24px;
@@ -251,16 +267,24 @@
       <h1>In-Person &amp; Co-Sponsored Events</h1>
     </div>
 
+    <!-- ── UPCOMING EVENTS ── -->
     <div class="section-label">Upcoming Events</div>
+    <p class="no-events">No upcoming events scheduled. Check back soon.</p>
+
+    <!-- ── PAST EVENTS ── -->
+    <div class="section-label">Past Events</div>
 
     <div class="upcoming">
-      <div class="upcoming-label">↑ Up Next</div>
+      <div class="upcoming-label">Chicago Climate Week · July 2026</div>
       <div class="event-title">Losing Growth, Finding the Plot: A Conversation About a Just Transition to a Smaller Global Economy</div>
-      <div class="event-meta">Thursday, July 23 · 5:30–7:00 PM &nbsp;·&nbsp; In-Person (Chicago) </div>
+      <div class="event-meta">Thursday, July 23 · 5:30–7:00 PM &nbsp;·&nbsp; In-Person (Chicago)</div>
       <div class="event-meta">Co-Sponsor: <a href="https://www.degrowthinstitute.org/" target="_blank">Degrowth Institute</a></div>
-      <div class="event-meta"><a href="https://www.zeffy.com/en-US/ticketing/chicago-climate-week-degrowth-a-just-transtion-to-a-smaller-global-economy" target="_blank">Register to attend →</a></div>
-      <div class="event-desc">Join Chicago's own Degrowth Institute (DGI) and Lost The Plot (LTP) for a short presentation and discussion on challenges to economic growth and circularity in our economy. DGI's Programs Coordinator, Jason Barahona Rosales, will give a short primer on degrowth, which calls for a just transition to a smaller economy. Then Madeleine Sullivan, a Digital Business Analyst at Caterpillar with deep expertise in circular economies, will give a brief history of how we became a single-use, disposable consumer product society, and discuss how our conversations about sustainability rarely attempt to actually challenge underserving status quo systems.
-      <br><br>The most interesting Climate Week event you'll attend! Balance out your networking with some real discussion on what needs to be done to address our climate goals and meet folks working and fighting for real change.</div>
+      <div class="event-meta"><a href="https://www.zeffy.com/en-US/ticketing/chicago-climate-week-degrowth-a-just-transtion-to-a-smaller-global-economy" target="_blank">Event page →</a></div>
+      <div class="event-desc">Lost The Plot co-hosted with Chicago's own Degrowth Institute (DGI) for a Chicago Climate Week event. With presentations from DGI's Jason Barahona Rosales and circular economy specialist Madeleine Sullivan, 
+        we talked about the fundamentals of degrowth and then applied the theory to the concept of the circular economy. This exercise helped exemplify how well-meaning sustainability initiatives may still miss the point - a key theme 
+        of Lost The Plot - and in this case can be fortified by the challenge to growth. With over 40 attendees, including a good handful that hadn't ever interacted with degrowth concepts before, we achieved our goal of engaging people
+        in honest and unique conversations about real climate action.</div>
+      <img class="event-photo" src="eventimages/CCWevent.jpg" alt="Chicago Climate Week event photo" />
     </div>
 
   </main>
