@@ -76,22 +76,6 @@
   .nav-label.active { color: var(--red); }
   .nav-label::after { content: '▾'; font-size: 9px; }
 
-  .nav-direct {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #888;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    height: 48px;
-    transition: color 0.15s;
-  }
-
-  .nav-direct:hover { color: var(--white); }
-  .nav-direct.active { color: var(--red); }
-
   .dropdown {
     display: none;
     position: absolute;
@@ -279,11 +263,14 @@
         </div>
       </li>
       <li class="nav-item">
-        <a href="events.html" class="nav-direct">In-Person &amp; Co-Sponsored Events</a>
+        <span class="nav-label">In the World</span>
+        <div class="dropdown">
+          <a href="events.html">In-Person &amp; Co-Sponsored Events</a>
+          <a href="articles.html">Articles</a>
+        </div>
       </li>
     </ul>
   </nav>
-
   <header class="hero">
     <span class="logo-lost">LOST</span>
     <div class="logo-the">THE</div>
