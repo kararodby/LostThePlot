@@ -135,14 +135,24 @@
 
   .article-entry:first-of-type { border-top: 1px solid var(--mid); }
 
-  .article-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
+  /* Top row: photo left, pub+title right */
+  .article-header {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    align-items: center;
     margin-bottom: 20px;
+  }
+
+  .article-thumb {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
     border: 1px solid var(--mid);
   }
+
+  .article-header-text {}
 
   .article-pub {
     font-family: 'IBM Plex Mono', monospace;
@@ -155,19 +165,19 @@
 
   .article-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(24px, 4vw, 36px);
+    font-size: clamp(28px, 4.5vw, 42px);
     letter-spacing: 0.04em;
     color: var(--white);
     line-height: 1.05;
-    margin-bottom: 12px;
   }
 
+  /* Bottom: description + link full width */
   .article-desc {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.78;
+    font-size: 14px;
+    line-height: 1.75;
     color: #999;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .article-link {
@@ -210,6 +220,8 @@
 
   @media (max-width: 560px) {
     body { padding: 40px 24px 60px; }
+    .article-header { grid-template-columns: 1fr; }
+    .article-thumb { width: 100%; height: auto; aspect-ratio: 1; }
     footer { flex-direction: column; align-items: flex-start; }
     footer .footer-meta { text-align: left; }
   }
@@ -252,10 +264,14 @@
     </div>
 
     <div class="article-entry">
-      <img class="article-image" src="articleimages/IS_articlepic.png" alt="We Lost the Plot article" />
-      <div class="article-pub">Intercalation Station · 2026</div>
-      <div class="article-title">We Lost the Plot: How Climate Tech Forgot About Climate</div>
-      <div class="article-desc">Lost the Plot founder Kara Rodby challenges climate professionals to step back from the day-to-day mechanics of their careers and ask a harder question: is the work we're doing actually moving the needle on climate, or even related to climate? Or have we gotten so deep into the weeds of technology development that we've lost sight of what we're supposed to be solving? Kara calls for more critical thinking and radical honesty in the industry to, at minimum, drop the virtue signaling, and instead allow deeper reflection that can lead to more meaningful action.</div>
+      <div class="article-header">
+        <img class="article-thumb" src="articleimages/IS_articlepic.png" alt="We Lost the Plot article" />
+        <div class="article-header-text">
+          <div class="article-pub">Intercalation Station · 2026</div>
+          <div class="article-title">We Lost the Plot: How Climate Tech Forgot About Climate</div>
+        </div>
+      </div>
+      <div class="article-desc">Lost the Plot founder Kara Rodby challenges climate professionals to step back from the day-to-day mechanics of their careers and ask a harder question: is the work we're doing actually moving the needle on climate, or even related to climate? Or have we gotten so deep into the weeds of technology development that we've lost sight of what we're supposed to be solving? Kara calls for more critical thinking and radical honesty in the industry to, at minimum, drop the virtue signaling, to allow for deeper reflection that can lead to more meaningful action.</div>
       <a class="article-link" href="https://intercalationstation.substack.com/p/we-lost-the-plot-how-climate-tech" target="_blank">Read on Intercalation Station →</a>
     </div>
 
