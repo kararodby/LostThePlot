@@ -44,6 +44,22 @@
     padding: 0 40px;
   }
 
+    .nav-direct {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    transition: color 0.15s;
+  }
+
+  .nav-direct:hover { color: var(--white); }
+  .nav-direct.active { color: var(--red); }
+
   nav ul {
     max-width: 780px;
     margin: 0 auto;
