@@ -1,1 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NVY2LXTJE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5NVY2LXTJE');
+</script>
+
+<!-- Open Graph meta tags -->
+<meta property="og:title" content="Articles — Lost the Plot" />
+<meta property="og:description" content="Writing from Lost the Plot founder Kara Rodby on the state of climate tech and the climate movement." />
+<meta property="og:url" content="https://lost-the-plot.com/articles.html" />
+<meta property="og:image" content="https://lost-the-plot.com/logos/LTP Logo PNG.png" />
+<link rel="icon" type="image/png" href="logos/LTP mini letter logo.png" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Articles — Lost the Plot</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #2a2a2a;
+    --white: #f2f0eb;
+    --red: #d42b2b;
+    --gray: #333333;
+    --mid: #444444;
+  }
+
+  html { background: var(--black); color: var(--white); }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid var(--mid);
+    padding: 0 40px;
+  }
+
+  nav ul {
+    max-width: 780px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .nav-item { position: relative; }
+
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 48px;
+    transition: color 0.15s;
+    user-select: none;
+  }
+
+  .nav-label:hover { color: var(--white); }
+  .nav-label.active { color: var(--red); }
+  .nav-label::after { content: '▾'; font-size: 9px; }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    border: 1px solid var(--mid);
+    border-top: 2px solid var(--red);
+    min-width: 210px;
+    z-index: 200;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+  }
+
+  .dropdown a:hover { color: var(--white); background: var(--gray); }
+  .dropdown a.active { color: var(--red); }
+  .nav-item:hover .dropdown { display: block; }
+
+  body {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    background: var(--black);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  .page-title {
+    margin-top: 52px;
+    margin-bottom: 52px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--red);
+  }
+
+  .page-title h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .article-entry {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .article-entry:first-of-type { border-top: 1px solid var(--mid); }
+
+  .article-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid var(--mid);
+  }
+
+  .article-pub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 8px;
+  }
+
+  .article-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+
+  .article-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.78;
+    color: #999;
+    margin-bottom: 16px;
+  }
+
+  .article-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .article-link:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  footer .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--red);
+  }
+
+  footer .footer-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #666;
+    text-align: right;
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 24px 60px; }
+    footer { flex-direction: column; align-items: flex-start; }
+    footer .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li class="nav-item">
+        <span class="nav-label">About</span>
+        <div class="dropdown">
+          <a href="index.html">Lost The Plot</a>
+          <a href="goals.html">Goals</a>
+          <a href="about.html">Kara Rodby</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label">The Series</span>
+        <div class="dropdown">
+          <a href="manifesto.html">The Manifesto</a>
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
+          <a href="nominate.html">Nominate a Speaker</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="nav-label active">In the World</span>
+        <div class="dropdown">
+          <a href="events.html">In-Person &amp; Co-Sponsored Events</a>
+          <a href="articles.html" class="active">Articles</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="page-title">
+      <h1>Articles</h1>
+    </div>
+
+    <div class="article-entry">
+      <img class="article-image" src="articleimages/IS_articlepic.png" alt="We Lost the Plot article" />
+      <div class="article-pub">Intercalation Station · 2026</div>
+      <div class="article-title">We Lost the Plot: How Climate Tech Forgot About Climate</div>
+      <div class="article-desc">Lost the Plot founder Kara Rodby challenges climate professionals to step back from the day-to-day mechanics of their careers and ask a harder question: is the work we're doing actually moving the needle on climate, or even related to climate? Or have we gotten so deep into the weeds of technology development that we've lost sight of what we're supposed to be solving? Kara calls for more critical thinking and radical honesty in the industry to, at minimum, drop the virtue signaling, and instead allow deeper reflection that can lead to more meaningful action.</div>
+      <a class="article-link" href="https://intercalationstation.substack.com/p/we-lost-the-plot-how-climate-tech" target="_blank">Read on Intercalation Station →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-brand">Lost the Plot</div>
+    <div class="footer-meta">A Climate Initiative</div>
+  </footer>
+
+</body>
+</html>
