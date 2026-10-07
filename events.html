@@ -137,64 +137,15 @@
     margin-bottom: 24px;
   }
 
-  /* ── UPCOMING EVENT CARDS ── */
-  .upcoming {
-    background: var(--gray);
-    border: 1px solid var(--mid);
-    border-left: 4px solid var(--red);
-    padding: 36px 40px;
-    margin-bottom: 32px;
-  }
-
-  .upcoming-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 24px;
-  }
-
-  .event-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(24px, 4vw, 36px);
-    letter-spacing: 0.04em;
-    color: var(--white);
-    line-height: 1.05;
-    margin-bottom: 10px;
-  }
-
-  .event-meta {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    color: white;
-    margin-bottom: 8px;
-  }
-
-  .event-meta a {
-    color: var(--red);
-    text-decoration: none;
-  }
-
-  .event-meta a:hover { text-decoration: underline; }
-
-  .event-desc {
+  .no-events {
     font-family: 'IBM Plex Serif', Georgia, serif;
     font-size: 15px;
-    line-height: 1.78;
-    color: #888;
-    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 64px;
   }
 
-  .event-desc a {
-    color: var(--red);
-    text-decoration: none;
-  }
-
-  .event-desc a:hover { text-decoration: underline; }
-
-  /* ── PAST EVENT ENTRIES (speaker-style) ── */
+  /* ── PAST EVENT ENTRIES ── */
   .event-entry {
     display: grid;
     grid-template-columns: 80px 1fr;
@@ -225,7 +176,7 @@
     font-size: 9px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--white);
+    color: #666;
     line-height: 1.5;
   }
 
@@ -320,7 +271,6 @@
 
   @media (max-width: 560px) {
     body { padding: 40px 24px 60px; }
-    .upcoming { padding: 24px 20px; }
     .event-entry { grid-template-columns: 60px 1fr; gap: 16px; }
     footer { flex-direction: column; align-items: flex-start; }
     footer .footer-meta { text-align: left; }
@@ -358,34 +308,42 @@
 
     <!-- ── UPCOMING EVENTS ── -->
     <div class="section-label">Upcoming Events</div>
-
-    <!-- Breaking The Cycle -->
-    <div class="upcoming">
-      <div class="upcoming-label">↓ Coming Up · Token Institute Film Conference</div>
-      <div class="event-title">Breaking the Cycle: Changing How We Develop Technology to Have More Intentionality</div>
-      <div class="event-meta">Sunday, September 13 · 12:15–1:00 PM &nbsp;·&nbsp; In-Person (Chicago)</div>
-      <div class="event-meta">Co-Sponsor: <a href="https://tokenfilmfest.org/institute" target="_blank">The Token Institute</a></div>
-      <div class="event-meta"><a href="https://tokenfilmfest.org/conference" target="_blank">Register to attend →</a></div>
-      <div class="event-desc">While technology is often the focus or catalyst of societal change, it is hardly ever developed with intentionality towards end use. Rather, technology has been treated as acontextual: it is developed and then applied to many different use cases that can have vastly different societal implications. It is also usually designed to solve one problem, while ignoring the other problems it may create. Industry-level regulation is often minimal, and we continue to see entire new sectors emerge for technologies that actively make peoples' lives worse.
-      <br><br>These trends have only heightened over the last 50+ years with the rise of neoliberal politics. Since AI is a virtually brand new industry with the potential to significantly change society for better or worse, now is the time to break the cycle by slowing down and designing guardrails that limit unintended consequences, externalities, and direct harm, instead centering societal wellbeing. This is particularly important for mitigating the climate implications of the AI industry, which have the potential to accelerate climate change significantly in the coming decades.
-      <br><br>This talk is a part of the 2026 Token Institute Film Conference, a cultural conversation built around collections of short films created with AI tools interspersed with discussions on the ethical evolution of this industry.</div>
-    </div>
+    <p class="no-events">No upcoming events scheduled. Check back soon.</p>
 
     <!-- ── PAST EVENTS ── -->
-    <div class="section-label" style="margin-top: 60px;">Past Events</div>
+    <div class="section-label" style="margin-top: 48px;">Past Events</div>
+
+    <!-- Breaking The Cycle · September 2026 -->
+    <div class="event-entry">
+      <div class="event-left">
+        <div class="event-num">Sep<br>2026</div>
+        <div class="event-date-left">Token<br>Institute<br>Film<br>Conference</div>
+      </div>
+      <div class="event-info">
+        <div class="event-info-title">Breaking the Cycle: Changing How We Develop Technology to Have More Intentionality</div>
+        <div class="event-info-meta">Sun, Sept 13 · 12:15–1:00 PM &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: <a href="https://tokenfilmfest.org/institute" target="_blank">The Token Institute</a></div>
+        <div class="event-info-desc">While technology is often the focus or catalyst of societal change, it is hardly ever developed with intentionality towards end use. Rather, technology has been treated as acontextual: it is developed and then applied to many different use cases that can have vastly different societal implications. It is also usually designed to solve one problem, while ignoring the other problems it may create. Industry-level regulation is often minimal, and we continue to see entire new sectors emerge for technologies that actively make peoples' lives worse.
+        <br><br>These trends have only heightened over the last 50+ years with the rise of neoliberal politics. Since AI is a virtually brand new industry with the potential to significantly change society for better or worse, now is the time to break the cycle by slowing down and designing guardrails that limit unintended consequences, externalities, and direct harm, instead centering societal wellbeing. This is particularly important for mitigating the climate implications of the AI industry, which have the potential to accelerate climate change significantly in the coming decades.
+        <br><br>This talk was a part of the 2026 Token Institute Film Conference, a cultural conversation built around collections of short films created with AI tools interspersed with discussions on the ethical evolution of this industry.</div>
+        <a class="event-link" href="https://tokenfilmfest.org/conference" target="_blank">Event page →</a>
+        <!-- <img class="event-photo" src="eventimages/TOKEN-event.jpg" alt="Token Institute event photo" /> -->
+      </div>
+    </div>
 
     <!-- The Patience Deficit · September 2026 -->
     <div class="event-entry">
       <div class="event-left">
         <div class="event-num">Sep<br>2026</div>
- <div class="event-date-left">Chicago<br>Venture<br>Week</div>
+        <div class="event-date-left">Chicago<br>Venture<br>Week</div>
         <a href="https://www.youtube.com/watch?v=rjA6e0Gai0c" target="_blank" style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); text-decoration: none; line-height: 1.5;">View<br>Recording<br>→</a>
       </div>
       <div class="event-info">
         <div class="event-info-title">The Patience Deficit: Rethinking Capital for Climate Tech</div>
-        <div class="event-info-meta">Wed, Sept 9 &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: <a href="https://www.climateactionmuseum.org/" target="_blank">Climate Action Museum</a></div>
-        <div class="event-info-desc">Lost The Plot (LTP) co-hosted with Chicago's <a href="https://www.climateactionmuseum.org/" target="_blank">Climate Action Museum</a> (CAM) for a Chicago Venture Week event. The event consisted of a presentation from LTP's Kara Rodby on the shortcomings of the venture capital         model for scaling important climate tech, followed by a fireside chat where Kara was joined by <a href="https://www.linkedin.com/in/michelle-carr-64979a/" target="_blank">Michelle Carr</a> of <a href="https://evergreeninno.org/" target="_blank">Evergreen Climate Innovations</a>         and <a href="https://www.linkedin.com/in/matt-orsagh-a1b8417/" target="_blank">Matt Orsagh</a> of the <a href="https://www.arketa-institute.org/" target="_blank">Arketa Institute</a> to discuss how these folks think about changing the system. 15 people attended and gave strongly positive feedback        that they appreciated the content and conversation, which was repeatedly noted as unique compared to other conference/seminar/panel offerings. This event may lead to more partnerships between LTP and CAM, stay tuned. </div>
-        <img class="event-photo" src="eventimages/CAMevent.png" alt="The Patience Deficit event photo" />
+        <div class="event-info-meta">Wed, Sept 9 · 5:30–7:30 PM &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: <a href="https://www.climateactionmuseum.org/" target="_blank">Climate Action Museum</a></div>
+        <div class="event-info-desc">Climate change is a generation-defining challenge. The magnitude of need for first-of-a-kind solutions makes the venture capital (VC) model an obvious choice for funding climate technologies and services. However, is the traditional venture capital model actually suited to find success in climate tech? If not, are we relying too much on the venture model to solve climate change?
+        <br><br>Kara Rodby led a presentation and fireside chat with <a href="https://www.linkedin.com/in/michelle-carr-64979a/" target="_blank">Michelle Carr</a> (CEO, <a href="https://evergreeninno.org/" target="_blank">Evergreen Climate Innovations</a>) and <a href="https://www.linkedin.com/in/matt-orsagh-a1b8417/" target="_blank">Matt Orsagh</a> (co-founder, <a href="https://www.arketa-institute.org/" target="_blank">Arketa Institute</a>), exploring the opportunities and challenges of alternative financing models to VC for climate hardware.</div>
+        <a class="event-link" href="https://givebutter.com/climate-finance" target="_blank">Event page →</a>
+        <img class="event-photo" src="eventimages/CAMevent.jpg" alt="The Patience Deficit event photo" />
       </div>
     </div>
 
@@ -396,8 +354,8 @@
         <div class="event-date-left">Chicago<br>Climate<br>Week</div>
       </div>
       <div class="event-info">
-        <div class="event-info-title">Losing the Growth, Finding the Plot: A Conversation About a Just Transition to a Smaller Global Economy</div>
-        <div class="event-info-meta">Thu, Jul 23 &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: <a href="https://www.degrowthinstitute.org/" target="_blank">Degrowth Institute</a></div>
+        <div class="event-info-title">Losing Growth, Finding the Plot: A Conversation About a Just Transition to a Smaller Global Economy</div>
+        <div class="event-info-meta">Thu, Jul 23 · 5:30–7:00 PM &nbsp;·&nbsp; In-Person (Chicago) &nbsp;·&nbsp; Co-Sponsor: <a href="https://www.degrowthinstitute.org/" target="_blank">Degrowth Institute</a></div>
         <div class="event-info-desc">Lost The Plot co-hosted with Chicago's own Degrowth Institute (DGI) for a Chicago Climate Week event. With presentations from DGI's Jason Barahona Rosales and circular economy specialist Madeleine Sullivan, we talked about the fundamentals of degrowth and then applied the theory to the concept of the circular economy. This exercise helped exemplify how well-meaning sustainability initiatives may still miss the point — a key theme of Lost The Plot — and in this case can be fortified by the challenge to growth. With over 40 attendees, including a good handful that hadn't ever interacted with degrowth concepts before, we achieved our goal of engaging people in honest and unique conversations about real climate action.</div>
         <a class="event-link" href="https://www.zeffy.com/en-US/ticketing/chicago-climate-week-degrowth-a-just-transtion-to-a-smaller-global-economy" target="_blank">Event page →</a>
         <img class="event-photo" src="eventimages/CCWevent.jpg" alt="Chicago Climate Week event photo" />
