@@ -44,7 +44,6 @@
     padding: 0 40px;
   }
 
-
   nav ul {
     max-width: 780px;
     margin: 0 auto;
@@ -142,22 +141,12 @@
 
   .back-link:hover { color: var(--white); }
 
-  .speaker-linkedin {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--red);
-    text-decoration: none;
-  }
-
-  .speaker-linkedin:hover { text-decoration: underline; }
-
+  /* ── SPEAKER ENTRY ── */
   .speaker-entry {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 28px;
-    padding: 28px 0;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+    padding: 24px 0;
     border-bottom: 1px solid var(--mid);
     align-items: start;
   }
@@ -172,37 +161,51 @@
 
   .speaker-num {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
+    font-size: 26px;
     letter-spacing: 0.06em;
     color: var(--red);
     line-height: 1;
   }
 
   .speaker-photo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border: 1px solid #555;
     filter: grayscale(100%);
+    aspect-ratio: 1;
   }
+
+  .speaker-linkedin {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .speaker-linkedin:hover { text-decoration: underline; }
+
+  /* ── RIGHT COLUMN ── */
+  .speaker-info {}
 
   .speaker-talk {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: clamp(18px, 2.5vw, 24px);
     letter-spacing: 0.04em;
     color: var(--white);
     line-height: 1.05;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .speaker-name {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 16px;
+    font-size: 13px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #aaa;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .speaker-date {
@@ -210,21 +213,13 @@
     font-size: 10px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: white;
+    color: #666;
     margin-bottom: 10px;
-  }
-
-  .speaker-desc {
-    font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: 14px;
-    line-height: 1.75;
-    color: #999;
-    margin-bottom: 12px;
   }
 
   .speaker-link {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
+    font-size: 10px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--red);
@@ -233,6 +228,46 @@
 
   .speaker-link:hover { text-decoration: underline; }
 
+  /* ── DESCRIPTION DROPDOWN ── */
+  .desc-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.15s;
+  }
+
+  .desc-toggle:hover { color: var(--white); }
+
+  .desc-toggle .arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 9px;
+  }
+
+  .desc-toggle.open .arrow { transform: rotate(180deg); }
+
+  .speaker-desc {
+    display: none;
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #999;
+    margin-top: 12px;
+  }
+
+  .speaker-desc.open { display: block; }
+
+  /* ── FOOTER ── */
   footer {
     margin-top: 56px;
     padding-top: 24px;
@@ -262,7 +297,8 @@
 
   @media (max-width: 560px) {
     body { padding: 40px 24px 60px; }
-    .speaker-entry { grid-template-columns: 80px 1fr; gap: 16px; }
+    .speaker-entry { grid-template-columns: 64px 1fr; gap: 14px; }
+    .speaker-photo { width: 64px; height: 64px; }
     footer { flex-direction: column; align-items: flex-start; }
     footer .footer-meta { text-align: left; }
   }
@@ -270,7 +306,7 @@
 </head>
 <body>
 
-    <nav>
+  <nav>
     <ul>
       <li class="nav-item">
         <span class="nav-label">About</span>
@@ -284,7 +320,7 @@
         <span class="nav-label active">The Series</span>
         <div class="dropdown">
           <a href="manifesto.html">The Manifesto</a>
-          <a href="speakers.html" class="active">Upcoming &amp; Past Speakers</a>
+          <a href="speakers.html">Upcoming &amp; Past Speakers</a>
           <a href="nominate.html">Nominate a Speaker</a>
         </div>
       </li>
@@ -297,20 +333,21 @@
       </li>
     </ul>
   </nav>
+
   <main>
 
     <div class="page-title">
       <h1>All Past Seminars</h1>
     </div>
 
-    <a href="speakers.html" class="back-link">← Back to Upcoming Speakers</a>
+    <a href="speakers.html" class="back-link">← Back to Speakers</a>
 
-    <!-- 2026.6 · Priyanka Mohanty and Leslie Chang · September 2026 -->
+    <!-- 2026.6 · Priyanka Mohanty and Leslie Chang -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.6</div>
         <img class="speaker-photo" src="headshots/Priyanka-Headshot_BW_b.png" style="object-position: top;" alt="Priyanka Mohanty" />
-         <a class="speaker-linkedin" href="https://www.linkedin.com/in/priyanka-mohanty-a8251874/" target="_blank">LinkedIn →</a>
+        <a class="speaker-linkedin" href="https://www.linkedin.com/in/priyanka-mohanty-a8251874/" target="_blank">LinkedIn →</a>
         <img class="speaker-photo" src="headshots/Leslie-Headshot.png" style="object-position: top;" alt="Leslie Chang" />
         <a class="speaker-linkedin" href="https://www.linkedin.com/in/changles/" target="_blank">LinkedIn →</a>
       </div>
@@ -318,11 +355,16 @@
         <div class="speaker-talk">Why 'High-Road' Principles Are Critical to Guide the Energy Transition</div>
         <div class="speaker-name">Priyanka Mohanty and Leslie Chang</div>
         <div class="speaker-date">September 2026</div>
-        <div class="speaker-desc">While the Trump Administration has attempted to reverse progress on climate change, the market continues to trend toward the electrification of our economy. As policymakers look to the future, industrial policy will be a critical next step in manufacturing technology locally, growing jobs in the energy transition, and building political consensus around climate action — while learning from the lessons of the Inflation Reduction Act (IRA).<br><br>What the IRA attempted to do — and what was the norm during our 20th-century industrial transformation — was to leverage the partnership and expertise of unions to drive the buildout of a new industrial future. However, decades of neoliberalism and a singular focus on profit maximization created a divided climate community. Businesses, scientific institutions, and policymakers focused on the energy transition did not necessarily see or understand the value of bringing labor into the buildout of a new climate economy, and this played out across the country during the Biden Administration.<br><br>As we look toward building a politically durable vision for the energy transition, we return to the basics: defining what "labor" really means; examining its history, including its growth and decline over the 20th century; explaining why worker participation and empowerment are important to building and enabling the clean energy economy; exploring how labor can help repair and advance broader societal change; and identifying where some of the negative perceptions of labor originate, both inside and outside the climate community.<br><br>We argue in this session that a successful strategy must incorporate 'high-road' principles to address both the climate and affordability crises while creating the economic opportunities needed to bring communities into the massive, whole-of-economy transition.</div>        <a class="speaker-link" href="https://www.youtube.com/watch?v=era2p2DqMwA" target="_blank">Watch on YouTube →</a>
+        <a class="speaker-link" href="https://www.youtube.com/watch?v=era2p2DqMwA" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">While the Trump Administration has attempted to reverse progress on climate change, the market continues to trend toward the electrification of our economy. As policymakers look to the future, industrial policy will be a critical next step in manufacturing technology locally, growing jobs in the energy transition, and building political consensus around climate action — while learning from the lessons of the Inflation Reduction Act (IRA).<br><br>What the IRA attempted to do — and what was the norm during our 20th-century industrial transformation — was to leverage the partnership and expertise of unions to drive the buildout of a new industrial future. However, decades of neoliberalism and a singular focus on profit maximization created a divided climate community. Businesses, scientific institutions, and policymakers focused on the energy transition did not necessarily see or understand the value of bringing labor into the buildout of a new climate economy, and this played out across the country during the Biden Administration.<br><br>As we look toward building a politically durable vision for the energy transition, we return to the basics: defining what "labor" really means; examining its history, including its growth and decline over the 20th century; explaining why worker participation and empowerment are important to building and enabling the clean energy economy; exploring how labor can help repair and advance broader societal change; and identifying where some of the negative perceptions of labor originate, both inside and outside the climate community.<br><br>We argue in this session that a successful strategy must incorporate 'high-road' principles to address both the climate and affordability crises while creating the economic opportunities needed to bring communities into the massive, whole-of-economy transition.</div>
       </div>
     </div>
 
-    <!-- 2026.5 · Danielle Levy · August 2026 -->
+    <!-- 2026.5 · Danielle Levy -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.5</div>
@@ -333,12 +375,16 @@
         <div class="speaker-talk">Money Makes The World Go Hot: How Extreme Wealth and Inequality Are a Climate Problem</div>
         <div class="speaker-name">Danielle Levy</div>
         <div class="speaker-date">August 2026</div>
-        <div class="speaker-desc">Extreme wealth isn't just unfair — it's a climate problem. From carbon-intensive lifestyles to investments in carbon-intensive industry, the hoarding and pursuit of wealth is driving the climate crisis. Such wealth is fueling anti-climate politicians and the perpetuation of the petrostate while depriving those most impacted from the funds needed for mitigation and adaptation. At the same time, there is enormous potential in the pocketbooks of everyday Americans to interrupt this cycle. In this presentation, policy, climate, and finance researcher Danielle Levy explored the insidious ways wealth and inequality hold us back from achieving a better future and highlighted opportunities to leverage the world's economic power for climate justice.</div>
         <a class="speaker-link" href="#" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">Extreme wealth isn't just unfair — it's a climate problem. From carbon-intensive lifestyles to investments in carbon-intensive industry, the hoarding and pursuit of wealth is driving the climate crisis. Such wealth is fueling anti-climate politicians and the perpetuation of the petrostate while depriving those most impacted from the funds needed for mitigation and adaptation. At the same time, there is enormous potential in the pocketbooks of everyday Americans to interrupt this cycle. In this presentation, policy, climate, and finance researcher Danielle Levy explored the insidious ways wealth and inequality hold us back from achieving a better future and highlighted opportunities to leverage the world's economic power for climate justice.</div>
       </div>
     </div>
 
-    <!-- 2026.4 · Bibatshu Thapa Chhetri · July 2026 -->
+    <!-- 2026.4 · Bibatshu Thapa Chhetri -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.4</div>
@@ -349,12 +395,16 @@
         <div class="speaker-talk">Replicas for Sovereignty: What Tuvalu's Turn to Digital Statehood Teaches Us About Climate Injustice</div>
         <div class="speaker-name">Bibatshu Thapa Chhetri</div>
         <div class="speaker-date">July 2026</div>
-        <div class="speaker-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation — a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=yEb312NLejw" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">Faced with rising seas and global inaction, Tuvalu is becoming the world's first digital nation — a brilliant, defiant, and deeply troubling act of fighting for sovereignty against a system that has failed to protect it. This talk explores what's gained and lost when vulnerable nations are forced to reimagine statehood itself, and why the Global South's fight for physical survival deserves a far louder place in climate conversations.</div>
       </div>
     </div>
 
-    <!-- 2026.3 · Kara Rodby · June 2026 -->
+    <!-- 2026.3 · Kara Rodby -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.3</div>
@@ -365,12 +415,16 @@
         <div class="speaker-talk">AI Won't Save Us, and Neither Will the Pentagon</div>
         <div class="speaker-name">Kara Rodby</div>
         <div class="speaker-date">June 2026</div>
-        <div class="speaker-desc">Everywhere, newsletters and podcasts are discussing the "pivot" climate tech is facing — a pivot to national security/defense, reliability/resilience, AI/grid infrastructure, to later stage companies with revenue, etc. — as if it is just a practicality of the times. Kara Rodby discusses why these reframings are not inherently climate tech and, in fact, are quite dangerous to the climate movement.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=wzEbCSPY7-E" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">Everywhere, newsletters and podcasts are discussing the "pivot" climate tech is facing — a pivot to national security/defense, reliability/resilience, AI/grid infrastructure, to later stage companies with revenue, etc. — as if it is just a practicality of the times. Kara Rodby discusses why these reframings are not inherently climate tech and, in fact, are quite dangerous to the climate movement.</div>
       </div>
     </div>
 
-    <!-- 2026.2 · John Mulrow · May 2026 -->
+    <!-- 2026.2 · John Mulrow -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.2</div>
@@ -381,12 +435,16 @@
         <div class="speaker-talk">Degrowth: A Just Transition to a Smaller Global Economy</div>
         <div class="speaker-name">John Mulrow</div>
         <div class="speaker-date">May 2026</div>
-        <div class="speaker-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation introduced the work of DGI and presented key insights from their work promoting economic downscaling as a path toward true sustainability.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=qrBmO_wDcNs" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">Degrowth is an intentional downscaling of the global economy, meant to support both ecological sustainability and social justice goals. In previous reports by the Degrowth Institute (DGI) we have detailed why and how the economy has outgrown the planet. It is not just carbon emissions, or wasteful consumption, or some specific sector of the economy that threatens planetary health, it's the pursuit of endless economic growth writ large. This presentation introduced the work of DGI and presented key insights from their work promoting economic downscaling as a path toward true sustainability.</div>
       </div>
     </div>
 
-    <!-- 2026.1 · Quoc Pham · April 2026 -->
+    <!-- 2026.1 · Quoc Pham -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.1</div>
@@ -397,12 +455,16 @@
         <div class="speaker-talk">The Future Arrived Early</div>
         <div class="speaker-name">Quoc Pham</div>
         <div class="speaker-date">April 2026</div>
-        <div class="speaker-desc">Paradoxically, as the planet heats up at an accelerating pace, attention and effort toward climate mitigation are fading. Against that backdrop, this talk offered an unconventional but pragmatic perspective from a chemist applying systems thinking to expose the real challenges, show how comforting narratives fail just as acceleration begins, and reveal the risks of pursuing solutions built on the wrong plot.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=dWelaNGlSNY" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">Paradoxically, as the planet heats up at an accelerating pace, attention and effort toward climate mitigation are fading. Against that backdrop, this talk offered an unconventional but pragmatic perspective from a chemist applying systems thinking to expose the real challenges, show how comforting narratives fail just as acceleration begins, and reveal the risks of pursuing solutions built on the wrong plot.</div>
       </div>
     </div>
 
-    <!-- 2026.0 · Kara Rodby · January 2026 -->
+    <!-- 2026.0 · Kara Rodby -->
     <div class="speaker-entry">
       <div class="speaker-left">
         <div class="speaker-num">2026.0</div>
@@ -413,8 +475,12 @@
         <div class="speaker-talk">Revisiting the Plot in Clean Energy Tech</div>
         <div class="speaker-name">Kara Rodby</div>
         <div class="speaker-date">January 2026</div>
-        <div class="speaker-desc">The talk that inspired this series. Kara Rodby examines how the role of venture capital and startups drive the central thrust of today's Clean Tech 2.0 movement, and how this model is doomed to fail investors and the climate.</div>
         <a class="speaker-link" href="https://www.youtube.com/watch?v=8k7CoP3bILk" target="_blank">Watch on YouTube →</a>
+        <br/>
+        <button class="desc-toggle" onclick="toggleDesc(this)">
+          Read description <span class="arrow">▾</span>
+        </button>
+        <div class="speaker-desc">The talk that inspired this series. Kara Rodby examines how the role of venture capital and startups drive the central thrust of today's Clean Tech 2.0 movement, and how this model is doomed to fail investors and the climate.</div>
       </div>
     </div>
 
@@ -424,6 +490,14 @@
     <div class="footer-brand">Lost the Plot</div>
     <div class="footer-meta">Monthly · Fridays · 12 - 1 PM CT<br>A Seminar Series on the State of the Climate</div>
   </footer>
+
+  <script>
+    function toggleDesc(btn) {
+      btn.classList.toggle('open');
+      const desc = btn.nextElementSibling;
+      desc.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
