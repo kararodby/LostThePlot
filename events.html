@@ -146,6 +146,63 @@
     margin-bottom: 64px;
   }
 
+  /* ── UPCOMING EVENT CARDS ── */
+  .upcoming {
+    background: var(--gray);
+    border: 1px solid var(--mid);
+    border-left: 4px solid var(--red);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+  }
+
+  .upcoming-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+  }
+
+  .event-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(24px, 4vw, 36px);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 10px;
+  }
+
+  .event-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .event-meta a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .event-meta a:hover { text-decoration: underline; }
+
+  .event-desc {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.78;
+    color: #888;
+    margin-top: 20px;
+  }
+
+  .event-desc a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .event-desc a:hover { text-decoration: underline; }
+
   /* ── PAST EVENT ENTRIES ── */
   .event-entry {
     display: grid;
@@ -272,6 +329,7 @@
 
   @media (max-width: 560px) {
     body { padding: 40px 24px 60px; }
+    .upcoming { padding: 24px 20px; }
     .event-entry { grid-template-columns: 60px 1fr; gap: 16px; }
     footer { flex-direction: column; align-items: flex-start; }
     footer .footer-meta { text-align: left; }
@@ -316,7 +374,18 @@
 
     <!-- ── UPCOMING EVENTS ── -->
     <div class="section-label">Upcoming Events</div>
-    <p class="no-events">No upcoming events scheduled. Check back soon.</p>
+
+    <!-- DegrowUS Webinar · November 2026 -->
+    <div class="upcoming">
+      <div class="upcoming-label">↓ Up Next · DegrowUS Webinar Series</div>
+      <div class="event-title">Degrowth in the "Mainstream" Environmental Movement</div>
+      <div class="event-meta">Wednesday, November 18 · 7:30–9:00 PM CT (5:30–7:00 PM PT) &nbsp;·&nbsp; Virtual (Webinar)</div>
+      <div class="event-meta">Host: <a href="https://www.degrowus.org/" target="_blank">DegrowUS</a></div>
+      <div class="event-meta"><a href="https://us06web.zoom.us/meeting/register/tW3gM0JaSEuzT-xpCUGAdQ" target="_blank">Register to attend →</a></div>
+      <div class="event-desc">DegrowUS is hosting an online learning series of webinars exploring practical degrowth organizing and action. This second webinar of the series focuses on opportunities to bring degrowth ideas into some of the more "mainstream" currents of the environmental movement, speaking with organizers active in sustainability, conservation and climate action about how they're bringing degrowth into these conversations.
+      <br><br>Kara Rodby of Lost the Plot joins Dylan Carson of Chicago's <a href="https://www.climateactionmuseum.org/" target="_blank">Climate Action Museum</a>, Harold Eyster of <a href="https://www.nature.org/" target="_blank">The Nature Conservancy</a>, and John Mulrow of the <a href="https://www.degrowthinstitute.org/" target="_blank">Degrowth Institute</a> to discuss their work and how the degrowth movement can weave itself into some of these more "established" modes of environmental action.
+      <br><br>This event is open to all, and will be recorded and shared publicly afterward.</div>
+    </div>
 
     <!-- ── PAST EVENTS ── -->
     <div class="section-label" style="margin-top: 48px;">Past Events</div>
